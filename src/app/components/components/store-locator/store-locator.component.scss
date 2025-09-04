@@ -20,7 +20,7 @@
         color: white;
         
         a {
-          color: #d4af37;
+          color: #f02c00;
           text-decoration: none;
           
           &:hover {
@@ -64,7 +64,7 @@
           display: block;
           width: 80px;
           height: 3px;
-          background: #d4af37;
+          background: #f02c00;
           margin: 20px auto;
         }
       }
@@ -89,7 +89,7 @@
           font-size: 16px;
           
           &:focus {
-            border-color: #d4af37;
+            border-color: #f02c00;
             box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
           }
         }
@@ -108,7 +108,7 @@
           transition: all 0.3s ease;
           
           &:hover {
-            color: #d4af37;
+            color: #f02c00;
           }
         }
       }
@@ -139,7 +139,7 @@
               right: 40px;
               top: 50%;
               transform: translateY(-50%);
-              background: #d4af37;
+              background: #f02c00;
               color: white;
               font-size: 12px;
               padding: 3px 8px;
@@ -165,7 +165,7 @@
             }
             
             .clear-btn {
-              color: #d4af37;
+              color: #f02c00;
               font-weight: 500;
               
               i {
@@ -251,7 +251,7 @@
             }
             
             &.active {
-              border-left: 3px solid #d4af37;
+              border-left: 3px solid #f02c00;
             }
             
             .store-header {
@@ -286,7 +286,7 @@
               
               i {
                 margin-right: 8px;
-                color: #d4af37;
+                color: #f02c00;
               }
               
               a {
@@ -294,7 +294,7 @@
                 text-decoration: none;
                 
                 &:hover {
-                  color: #d4af37;
+                  color: #f02c00;
                 }
               }
             }
@@ -321,9 +321,9 @@
             .details-btn {
               font-size: 14px;
               padding: 5px 15px;
-              color: #d4af37;
+              color: #f02c00;
               background: transparent;
-              border: 1px solid #d4af37;
+              border: 1px solid #f02c00;
               
               &:hover {
                 background: rgba(212, 175, 55, 0.1);
@@ -364,7 +364,7 @@
           font-size: 24px;
           color: #333;
           margin-bottom: 25px;
-          border-bottom: 2px solid #d4af37;
+          border-bottom: 2px solid #f02c00;
           padding-bottom: 10px;
           display: inline-block;
         }
@@ -388,7 +388,7 @@
             
             i {
               font-size: 20px;
-              color: #d4af37;
+              color: #f02c00;
               margin-right: 15px;
               margin-top: 3px;
             }
@@ -413,18 +413,18 @@
                 transition: all 0.3s ease;
                 
                 &:hover {
-                  color: #d4af37;
+                  color: #f02c00;
                 }
               }
               
               .directions-link {
-                color: #d4af37;
+                color: #f02c00;
                 font-weight: 500;
                 
                 i {
                   font-size: 14px;
                   margin-right: 5px;
-                  color: #d4af37;
+                  color: #f02c00;
                 }
               }
               
@@ -443,7 +443,7 @@
                     font-weight: 600;
                     
                     .day {
-                      color: #d4af37;
+                      color: #f02c00;
                     }
                   }
                   
@@ -488,12 +488,12 @@
             }
             
             .contact-btn {
-              background: #d4af37;
+              background: #f02c00;
               color: white;
               border: none;
               
               &:hover {
-                background: darken(#d4af37, 10%);
+                background: darken(#f02c00, 10%);
                 transform: translateY(-3px);
               }
             }
@@ -501,7 +501,7 @@
             .call-btn {
               background: transparent;
               color: #333;
-              border: 2px solid #d4af37;
+              border: 2px solid #f02c00;
               
               &:hover {
                 background: rgba(212, 175, 55, 0.1);

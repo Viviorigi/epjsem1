@@ -8,7 +8,6 @@ import { AboutComponent } from './components/components/about/about.component';
 import { ContactComponent } from './components/components/contact/contact.component';
 import { GalleryComponent } from './components/components/gallery/gallery.component';
 import { TechnologyComponent } from './components/components/technology/technology.component';
-import { SupportComponent } from './components/components/support/support.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +18,6 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'gallery', component: GalleryComponent },
   { path: 'technology', component: TechnologyComponent },
-  { path: 'support', component: SupportComponent },
   { path: '**', redirectTo: '' }
 ];
 

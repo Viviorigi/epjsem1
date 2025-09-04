@@ -20,7 +20,7 @@
         color: white;
         
         a {
-          color: #d4af37;
+          color: #f02c00;
           text-decoration: none;
           
           &:hover {
@@ -52,7 +52,7 @@
       margin-bottom: 25px;
       
       span {
-        color: #d4af37;
+        color: #f02c00;
         font-weight: 700;
       }
     }
@@ -69,7 +69,7 @@
     }
     
     .btn.hvr-hover {
-      background-color: #d4af37;
+      background-color: #f02c00;
       color: white;
       padding: 12px 25px;
       border-radius: 4px;
@@ -80,7 +80,7 @@
       transition: all 0.3s ease;
       
       &:hover {
-        background-color: darken(#d4af37, 10%);
+        background-color: darken(#f02c00, 10%);
         transform: translateY(-3px);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
@@ -103,7 +103,7 @@
       h3 {
         font-size: 22px;
         margin-bottom: 20px;
-        color: #d4af37;
+        color: #f02c00;
       }
     }
     
@@ -116,7 +116,7 @@
       transition: all 0.3s ease;
       
       &:hover {
-        background-color: #d4af37;
+        background-color: #f02c00;
         color: white;
         transform: translateY(-5px);
       }
@@ -169,7 +169,7 @@
           .post {
             display: block;
             font-size: 14px;
-            color: #d4af37;
+            color: #f02c00;
           }
         }
         
@@ -194,13 +194,13 @@
               height: 40px;
               line-height: 40px;
               background: white;
-              color: #d4af37;
+              color: #f02c00;
               border-radius: 50%;
               text-align: center;
               transition: all 0.3s ease;
               
               &:hover {
-                background: #d4af37;
+                background: #f02c00;
                 color: white;
               }
             }
@@ -234,7 +234,7 @@
       
       h4 {
         font-size: 24px;
-        color: #d4af37;
+        color: #f02c00;
         margin-bottom: 20px;
       }
       
@@ -248,7 +248,7 @@
         margin-bottom: 10px;
         
         i {
-          color: #d4af37;
+          color: #f02c00;
           width: 25px;
           margin-right: 10px;
         }
@@ -283,7 +283,7 @@
       left: 50%;
       width: 80px;
       height: 3px;
-      background: #d4af37;
+      background: #f02c00;
       transform: translateX(-50%);
     }
   }

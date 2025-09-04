@@ -13,7 +13,6 @@ import { AboutComponent } from './components/components/about/about.component';
 import { ContactComponent } from './components/components/contact/contact.component';
 import { GalleryComponent } from './components/components/gallery/gallery.component';
 import { TechnologyComponent } from './components/components/technology/technology.component';
-import { SupportComponent } from './components/components/support/support.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -33,7 +32,6 @@ import { ProductDetailModalComponent } from './shared/product-detail-modal/produ
     ContactComponent,
     GalleryComponent,
     TechnologyComponent,
-    SupportComponent,
     SafePipe,
     ProductDetailModalComponent
   ],
