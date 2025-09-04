@@ -40,14 +40,26 @@
                   Products <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'vintage'}">Vintage Collection</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'luxury'}">Luxury Timepieces</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'smart'}">Smart Watches</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'premium'}">Premium Cars</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'sports'}">Sports Cars</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'super'}">Supercars</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'hyper'}">Hypercars</a></li>
                   <li><a class="dropdown-item" [routerLink]="['/products']">All Products</a></li>
                 </ul>
               </li>
-               
-              <li class="nav-item"><a [routerLink]="['/technology']" routerLinkActive="active">Technology</a></li>
+              <li class="nav-item dropdown" (click)="toggleDropdown($event)" #productsDropdown>
+                <a class="nav-link">
+                  Brands <i class="fas fa-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'bmw'}">BMW</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'audi'}">Audi</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'hyundai'}">Hyundai</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'suzuki'}">Suzuki</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'kia'}">Kia</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']">All Products</a></li>
+                </ul>
+              </li>
               <li class="nav-item"><a [routerLink]="['/store-locator']" routerLinkActive="active">Store Locator</a></li>
               <li class="nav-item"><a [routerLink]="['/support']" routerLinkActive="active">Support</a></li>
               <li class="nav-item"><a [routerLink]="['/gallery']" routerLinkActive="active">Gallery</a></li>
