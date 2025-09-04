@@ -5,7 +5,6 @@ import { map, catchError, shareReplay } from 'rxjs/operators';
 import { Category, Watch } from './watches.service';
 import { Company, Statistics } from './company.service';
 import { StoreLocation } from './store-locator.service';
-import { Technology } from './technology.service';
 import { FAQ } from './faq.service';
 import { Testimonial } from './testimonial.service';
 import { WatchService } from './service.service';
@@ -128,18 +127,6 @@ export class DataService {
         return {
           faqs: data.faqs,
           services: data.services
-        };
-      })
-    );
-  }
-  
-  getTechnologyPageData(): Observable<{
-    technologies: Technology[]
-  }> {
-    return this.getData().pipe(
-      map(data => {
-        return {
-          technologies: data.technologies
         };
       })
     );
