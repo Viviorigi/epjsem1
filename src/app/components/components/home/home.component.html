@@ -1,0 +1,418 @@
+
+<div class="loading-container" *ngIf="loading">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <p>Loading amazing watches...</p>
+</div>
+
+<div class="alert alert-danger" *ngIf="error">
+  {{ error }}
+</div>
+
+<div *ngIf="!loading && !error">
+  <div class="main-banner">
+    <div class="owl-carousel owl-banner">
+      <div class="item item-1">
+        <div class="header-text">
+          <span class="category">Luxury <em>Collection</em></span>
+          <h2>Elevate Your Style<br>with Premium Timepieces</h2>
+          <div class="banner-button">
+            <a href="javascript:void(0)" (click)="navigateToCategory('luxury')">Explore Collection</a>
+          </div>
+        </div>
+      </div>
+      <div class="item item-2">
+        <div class="header-text">
+          <span class="category">Vintage <em>Collection</em></span>
+          <h2>Timeless Elegance<br>Classic Designs Redefined</h2>
+          <div class="banner-button">
+            <a href="javascript:void(0)" (click)="navigateToCategory('vintage')">Explore Collection</a>
+          </div>
+        </div>
+      </div>
+      <div class="item item-3">
+        <div class="header-text">
+          <span class="category">Smart <em>Collection</em></span>
+          <h2>Modern Technology<br>Meets Sophisticated Design</h2>
+          <div class="banner-button">
+            <a href="javascript:void(0)" (click)="navigateToCategory('smart')">Explore Collection</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <div class="featured section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="left-image">
+            <img src="assets/images/featured-watch.jpg" alt="Featured Watch">
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-heading">
+            <h6>| About Us</h6>
+            <h2>{{ companyInfo?.name || 'Alberto Watch Company' }} - {{ companyInfo?.slogan || 'Excellence in Timekeeping' }}</h2>
+          </div>
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Our Story
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  {{ companyInfo?.description || 'Alberto Watch Company is a full-service watch repair, appraisal, and retail store offering the finest selection of luxury timepieces. Founded with a passion for exceptional craftsmanship, we provide an unparalleled selection with first-class service.' }}
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Our Services
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  We offer comprehensive <strong>watch repair services</strong>, professional appraisals, and an extensive collection of premium watches. Our certified watchmakers can restore even the most complex timepieces to their original condition with precision and care.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Our Brands
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  We carry a wide selection of brand new watches such as <strong>Michael Kors, Rolex, Citizen Eco-Drive, Bulova</strong> and more. Each piece in our collection represents the pinnacle of watchmaking excellence.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="info-table">
+            <ul>
+              <li>
+                <div class="icon-container">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h4>Expert Repair<br><span>Master Watchmakers</span></h4>
+              </li>
+              <li>
+                <div class="icon-container">
+                  <i class="fas fa-certificate"></i>
+                </div>
+                <h4>Appraisal<br><span>Certified Professionals</span></h4>
+              </li>
+              <li>
+                <div class="icon-container">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <h4>Selection<br><span>Premium Timepieces</span></h4>
+              </li>
+              <li>
+                <div class="icon-container">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h4>Warranty<br><span>Guaranteed Quality</span></h4>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Craftsmanship Section -->
+  <div class="video section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Craftsmanship</h6>
+            <h2>The Art of Watchmaking</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="video-frame">
+            <img src="assets/images/watchmaking-video.jpg" alt="Watchmaking Process">
+            <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistics Section -->
+  <div class="fun-facts">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="wrapper">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" 
+                      [attr.data-to]="statistics?.yearsInBusiness || 25" 
+                      data-speed="1000"></h2>
+                  <p class="count-text ">Years<br>of Excellence</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" 
+                      [attr.data-to]="statistics?.watchesRepaired || 15000" 
+                      data-speed="1000"></h2>
+                  <p class="count-text ">Watches<br>Repaired</p>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="counter">
+                  <h2 class="timer count-title count-number" 
+                      [attr.data-to]="statistics?.brandsAvailable || 500" 
+                      data-speed="1000"></h2>
+                  <p class="count-text ">Premium Brands<br>Available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Collections Section with Tabs -->
+  <div class="section best-deal">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="section-heading">
+            <h6>| Collections</h6>
+            <h2>Discover Our Exclusive Collections</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="tabs-content">
+            <div class="row">
+              <div class="nav-wrapper ">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="nav-item" role="presentation" *ngFor="let category of categories; let i = index">
+                    <button class="nav-link" 
+                            [class.active]="i === 0"
+                            [id]="category.id + '-tab'" 
+                            data-bs-toggle="tab" 
+                            [attr.data-bs-target]="'#' + category.id" 
+                            type="button" 
+                            role="tab" 
+                            [attr.aria-controls]="category.id" 
+                            [attr.aria-selected]="i === 0">{{ category.name }}</button>
+                  </li>
+                </ul>
+              </div>              
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade" 
+                     *ngFor="let category of categories; let i = index"
+                     [class.show]="i === 0"
+                     [class.active]="i === 0"
+                     [id]="category.id" 
+                     role="tabpanel" 
+                     [attr.aria-labelledby]="category.id + '-tab'">
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <div class="info-table">
+                        <ul>
+                          <!-- Dynamic specifications based on category -->
+                          <ng-container *ngIf="category.id === 'vintage'">
+                            <li>Movement <span>Mechanical</span></li>
+                            <li>Case Material <span>Stainless Steel</span></li>
+                            <li>Band Material <span>Leather</span></li>
+                            <li>Water Resistance <span>30m</span></li>
+                            <li>Warranty <span>2 Years</span></li>
+                          </ng-container>
+                          <ng-container *ngIf="category.id === 'luxury'">
+                            <li>Movement <span>Swiss Automatic</span></li>
+                            <li>Case Material <span>18K Gold</span></li>
+                            <li>Band Material <span>Alligator Leather</span></li>
+                            <li>Water Resistance <span>100m</span></li>
+                            <li>Warranty <span>5 Years</span></li>
+                          </ng-container>
+                          <ng-container *ngIf="category.id === 'smart'">
+                            <li>Display <span>AMOLED Touchscreen</span></li>
+                            <li>Case Material <span>Titanium</span></li>
+                            <li>Band Material <span>Silicone/Metal</span></li>
+                            <li>Battery Life <span>Up to 7 days</span></li>
+                            <li>Warranty <span>1 Year</span></li>
+                          </ng-container>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <img [src]="'assets/images/categories/' + category.id + '.jpg'" [alt]="category.name">
+                    </div>
+                    <div class="col-lg-3">
+                      <h4>{{ category.name }}</h4>
+                      <p>{{ category.description }}</p>
+                      <div class="icon-button">
+                        <a [routerLink]="['/products']" [queryParams]="{category: category.id}">
+                          <i class="fa fa-eye"></i> View Collection
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Products Section -->
+  <div class="properties section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Featured Timepieces</h6>
+            <h2>Discover Our Most Coveted Watches</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Featured watch items -->
+        <div class="col-lg-4 col-md-6" *ngFor="let watch of featuredWatches">
+          <div class="item">
+            <a href="javascript:void(0)" (click)="openWatchDetails(watch)">
+              <img [src]="watch.images[0]" [alt]="watch.name">
+            </a>
+            <span class="category">{{ watch.categoryId === 'luxury' ? 'Luxury Collection' : 
+                                      watch.categoryId === 'vintage' ? 'Vintage Collection' : 
+                                      'Smart Collection' }}</span>
+            <h6>{{ watch.discount ? 
+                ((watch.price * (1 - watch.discount/100)) | currency:'USD':'symbol':'1.0-0') : 
+                (watch.price | currency:'USD':'symbol':'1.0-0') }}</h6>
+            <h4><a href="javascript:void(0)" (click)="openWatchDetails(watch)">{{ watch.name }}</a></h4>
+            <ul>
+              <li *ngIf="watch.specifications.movement">Movement: <span>{{ watch.specifications.movement }}</span></li>
+              <li *ngIf="watch.specifications.caseSize">Case Size: <span>{{ watch.specifications.caseSize }}</span></li>
+              <li *ngIf="watch.specifications.waterResistance">Water Resistance: <span>{{ watch.specifications.waterResistance }}</span></li>
+              <li *ngIf="watch.specifications.material">Material: <span>{{ watch.specifications.material }}</span></li>
+              <li *ngIf="watch.specifications.features && watch.specifications.features.length > 0">Features: 
+                <span>{{ watch.specifications.features.join(', ') }}</span>
+              </li>
+            </ul>
+            <div class="main-button">
+              <a href="javascript:void(0)" (click)="openWatchDetails(watch)">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 offset-lg-4">
+          <div class="section-heading text-center">
+            <h6>| Contact Us</h6>
+            <h2>Get In Touch With Our Experts</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div id="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1155335517404!2d105.84115007599775!3d21.02754148052354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab9b4a79fa85%3A0xd4c01582479b0553!2sHoan%20Kiem%20Lake!5e0!3m2!1sen!2s!4v1684210063387!5m2!1sen!2s" width="100%" height="500px" frameborder="0" style="border:0; border-radius: 10px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);" allowfullscreen=""></iframe>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="item phone">
+                <h6>{{ companyInfo?.contact?.phone || '+84 123 456 7890' }}<br><span>Phone Number</span></h6>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="item email">
+                <h6>{{ companyInfo?.contact?.email || 'info@albertoclocks.com' }}<br><span>Business Email</span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmitContactForm()">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="name">Full Name</label>
+                  <input type="text" formControlName="name" id="name" placeholder="Your Name..." autocomplete="on">
+                  <div *ngIf="contactForm.get('name').invalid && contactForm.get('name').touched" class="text-danger">
+                    Name is required
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="email">Email Address</label>
+                  <input type="email" formControlName="email" id="email" placeholder="Your E-mail...">
+                  <div *ngIf="contactForm.get('email').invalid && contactForm.get('email').touched" class="text-danger">
+                    Valid email is required
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="subject">Subject</label>
+                  <input type="text" formControlName="subject" id="subject" placeholder="Subject..." autocomplete="on">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <label for="message">Message</label>
+                  <textarea formControlName="message" id="message" placeholder="Your Message"></textarea>
+                  <div *ngIf="contactForm.get('message').invalid && contactForm.get('message').touched" class="text-danger">
+                    Message is required
+                  </div>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="orange-button" [disabled]="contactForm.invalid">Send Message</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-product-detail-modal
+  [watch]="selectedWatch"
+  [category]="selectedCategory"
+  [relatedWatches]="relatedWatches"
+  [loading]="modalLoading"
+  (closeModal)="onCloseModal()"
+  (viewRelatedWatch)="onViewRelatedWatch($event)">
+</app-product-detail-modal>
+
