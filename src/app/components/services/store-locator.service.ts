@@ -30,7 +30,7 @@ export interface StoreLocation {
   providedIn: 'root'
 })
 export class StoreLocatorService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private storeData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }

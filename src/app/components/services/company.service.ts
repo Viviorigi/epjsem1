@@ -38,7 +38,7 @@ export interface Statistics {
   providedIn: 'root'
 })
 export class CompanyService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private companyData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }

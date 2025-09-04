@@ -13,7 +13,7 @@ import { WatchService } from './service.service';
   providedIn: 'root'
 })
 export class DataService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private allData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }

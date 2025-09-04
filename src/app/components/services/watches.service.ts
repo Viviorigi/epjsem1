@@ -36,7 +36,7 @@ export interface Category {
   providedIn: 'root'
 })
 export class WatchesService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private watchesData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }

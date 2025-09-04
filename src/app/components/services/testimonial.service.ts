@@ -15,7 +15,7 @@ export interface Testimonial {
   providedIn: 'root'
 })
 export class TestimonialsService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private testimonialData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }

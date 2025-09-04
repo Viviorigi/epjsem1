@@ -13,7 +13,7 @@ export interface FAQ {
   providedIn: 'root'
 })
 export class FaqService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private faqData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }

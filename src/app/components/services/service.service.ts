@@ -32,7 +32,7 @@ export interface WatchService {
   providedIn: 'root'
 })
 export class ServicesService {
-  private dataUrl = 'assets/data/alberto-clocks-data.json';
+  private dataUrl = 'assets/data/carrio-motors-data.json';
   private servicesData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }
