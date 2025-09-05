@@ -2,7 +2,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../../services/data.service';
-import { WatchesService, Watch, Category } from '../../services/watches.service';
+import { CarsService, Car, Category } from '../../services/cars.service';
 import { CompanyService, Statistics } from '../../services/company.service';
 import { Router } from '@angular/router';
 import { Testimonial, TestimonialsService } from '../../services/testimonial.service';
@@ -20,7 +20,7 @@ declare var $: any;
 export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild(ProductDetailModalComponent) productModal!: ProductDetailModalComponent;
   
-  featuredWatches: Watch[] = [];
+  featuredCars: Car[] = [];
   categories: Category[] = [];
   statistics: Statistics | null = null;
   testimonials: Testimonial[] = [];
@@ -29,14 +29,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
   error = '';
   contactForm: FormGroup;
   
-  selectedWatch: Watch | null = null;
+  selectedCar: Car | null = null;
   selectedCategory: any = null;
-  relatedWatches: Watch[] = [];
+  relatedCars: Car[] = [];
   modalLoading: boolean = false;
 
   constructor(
     private dataService: DataService,
-    private watchesService: WatchesService,
+    private carService: CarsService,
     private companyService: CompanyService,
     private testimonialsService: TestimonialsService,
     private productModalService: ProductModalService,
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   loadAllData(): void {
     this.dataService.getHomePageData().subscribe({
       next: (data) => {
-        this.featuredWatches = data.featuredWatches;
+        this.featuredCars = data.featuredCars;
         this.categories = data.categories;
         this.statistics = data.statistics;
         this.companyInfo = data.company;
@@ -100,15 +100,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
   
-  openWatchDetails(watch: Watch): void {
+  openCarDetails(Car: Car): void {
     this.modalLoading = true;
-    this.selectedWatch = watch;
+    this.selectedCar = Car;
     
-    this.productModalService.getProductDetail(watch.id).subscribe({
+    this.productModalService.getProductDetail(Car.id).subscribe({
       next: (data) => {
-        this.selectedWatch = data.product;
+        this.selectedCar = data.product;
         this.selectedCategory = data.category;
-        this.relatedWatches = data.relatedProducts;
+        this.relatedCars = data.relatedProducts;
         this.modalLoading = false;
         
         this.productModal.show();
@@ -122,11 +122,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
   
   onCloseModal(): void {
-    this.selectedWatch = null;
+    this.selectedCar = null;
   }
   
-  onViewRelatedWatch(watch: Watch): void {
-    this.openWatchDetails(watch);
+  onViewRelatedCar(Car: Car): void {
+    this.openCarDetails(Car);
   }
 
   initializeTabs(): void {

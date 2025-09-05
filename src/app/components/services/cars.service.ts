@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { map, catchError, tap, shareReplay } from 'rxjs/operators';
 
-export interface Watch {
+export interface Car {
   id: string;
   name: string;
   brand: string;
@@ -32,51 +32,59 @@ export interface Category {
   features: string[];
 }
 
+export interface Brand {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  features: string[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
-export class WatchesService {
+export class CarsService {
   private dataUrl = 'assets/data/carrio-motors-data.json';
-  private watchesData: Observable<any> | null = null;
+  private carsData: Observable<any> | null = null;
 
   constructor(private http: HttpClient) { }
 
   private getData(): Observable<any> {
-    if (!this.watchesData) {
-      this.watchesData = this.http.get<any>(this.dataUrl).pipe(
+    if (!this.carsData) {
+      this.carsData = this.http.get<any>(this.dataUrl).pipe(
         catchError(error => {
-          console.error('Error fetching watch data', error);
-          return throwError('Failed to load watch data. Please try again later.');
+          console.error('Error fetching Car data', error);
+          return throwError('Failed to load Car data. Please try again later.');
         }),
         shareReplay(1)
       );
     }
-    return this.watchesData;
+    return this.carsData;
   }
 
-  getAllWatches(): Observable<Watch[]> {
+  getAllcars(): Observable<Car[]> {
     return this.getData().pipe(
       map(data => data.products)
     );
   }
 
-  getWatchesByCategory(categoryId: string): Observable<Watch[]> {
+  getcarsByCategory(categoryId: string): Observable<Car[]> {
     return this.getData().pipe(
-      map(data => data.products.filter((product: Watch) => product.categoryId === categoryId))
+      map(data => data.products.filter((product: Car) => product.categoryId === categoryId))
     );
   }
 
-  getWatchById(watchId: string): Observable<Watch> {
+  getCarById(CarId: string): Observable<Car> {
     return this.getData().pipe(
       map(data => {
-        const watch = data.products.find((product: Watch) => product.id === watchId);
-        if (!watch) {
-          throw new Error(`Watch with ID ${watchId} not found`);
+        const Car = data.products.find((product: Car) => product.id === CarId);
+        if (!Car) {
+          throw new Error(`Car with ID ${CarId} not found`);
         }
-        return watch;
+        return Car;
       }),
       catchError(error => {
-        console.error('Error getting watch by ID', error);
+        console.error('Error getting Car by ID', error);
         return throwError(error);
       })
     );
@@ -104,31 +112,31 @@ export class WatchesService {
     );
   }
 
-  getFeaturedWatches(limit: number = 6): Observable<Watch[]> {
+  getFeaturedCars(limit: number = 6): Observable<Car[]> {
     return this.getData().pipe(
       map(data => {
-        const discountedWatches = data.products.filter((watch: Watch) => watch.discount !== null);
+        const discountedcars = data.products.filter((Car: Car) => Car.discount !== null);
 
-        if (discountedWatches.length >= limit) {
-          return discountedWatches.slice(0, limit);
+        if (discountedcars.length >= limit) {
+          return discountedcars.slice(0, limit);
         }
 
-        const otherWatches = data.products
-          .filter((watch: Watch) => watch.discount === null)
-          .slice(0, limit - discountedWatches.length);
+        const othercars = data.products
+          .filter((Car: Car) => Car.discount === null)
+          .slice(0, limit - discountedcars.length);
           
-        return [...discountedWatches, ...otherWatches];
+        return [...discountedcars, ...othercars];
       })
     );
   }
 
-  getWatchesByPriceRange(minPrice: number, maxPrice: number): Observable<Watch[]> {
+  getcarsByPriceRange(minPrice: number, maxPrice: number): Observable<Car[]> {
     return this.getData().pipe(
       map(data => {
-        return data.products.filter((watch: Watch) => {
-          const actualPrice = watch.discount 
-            ? watch.price * (1 - watch.discount / 100) 
-            : watch.price;
+        return data.products.filter((Car: Car) => {
+          const actualPrice = Car.discount 
+            ? Car.price * (1 - Car.discount / 100) 
+            : Car.price;
             
           return actualPrice >= minPrice && actualPrice <= maxPrice;
         });
@@ -136,7 +144,7 @@ export class WatchesService {
     );
   }
 
-  searchWatches(query: string): Observable<Watch[]> {
+  searchcars(query: string): Observable<Car[]> {
     if (!query.trim()) {
       return of([]);
     }
@@ -144,42 +152,42 @@ export class WatchesService {
     const searchTerm = query.toLowerCase().trim();
     return this.getData().pipe(
       map(data => {
-        return data.products.filter((watch: Watch) => 
-          watch.name.toLowerCase().includes(searchTerm) || 
-          watch.brand.toLowerCase().includes(searchTerm) ||
-          watch.description.toLowerCase().includes(searchTerm)
+        return data.products.filter((Car: Car) => 
+          Car.name.toLowerCase().includes(searchTerm) || 
+          Car.brand.toLowerCase().includes(searchTerm) ||
+          Car.description.toLowerCase().includes(searchTerm)
         );
       })
     );
   }
 
-  getRelatedWatches(watchId: string, limit: number = 4): Observable<Watch[]> {
+  getRelatedcars(CarId: string, limit: number = 4): Observable<Car[]> {
     return this.getData().pipe(
       map(data => {
-        const currentWatch = data.products.find((w: Watch) => w.id === watchId);
-        if (!currentWatch) {
+        const currentCar = data.products.find((w: Car) => w.id === CarId);
+        if (!currentCar) {
           return [];
         }
         
-        const sameCategory = data.products.filter((w: Watch) => 
-          w.categoryId === currentWatch.categoryId && w.id !== watchId
+        const sameCategory = data.products.filter((w: Car) => 
+          w.categoryId === currentCar.categoryId && w.id !== CarId
         );
         
         if (sameCategory.length >= limit) {
           return sameCategory.slice(0, limit);
         }
         
-        const sameBrand = data.products.filter((w: Watch) => 
-          w.brand === currentWatch.brand && 
-          w.id !== watchId && 
+        const sameBrand = data.products.filter((w: Car) => 
+          w.brand === currentCar.brand && 
+          w.id !== CarId && 
           !sameCategory.some(c => c.id === w.id)
         );
         
         const related = [...sameCategory, ...sameBrand];
         
         if (related.length < limit) {
-          const remaining = data.products.filter((w: Watch) => 
-            w.id !== watchId && 
+          const remaining = data.products.filter((w: Car) => 
+            w.id !== CarId && 
             !related.some(r => r.id === w.id)
           ).slice(0, limit - related.length);
           

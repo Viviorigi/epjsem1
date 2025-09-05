@@ -52,11 +52,11 @@
                   Brands <i class="fas fa-chevron-down"></i>
                 </a>
                 <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'bmw'}">BMW</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'audi'}">Audi</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'hyundai'}">Hyundai</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'suzuki'}">Suzuki</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{category: 'kia'}">Kia</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{brand: 'bmw'}">BMW</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{brand: 'audi'}">Audi</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{brand: 'hyundai'}">Hyundai</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{brand: 'suzuki'}">Suzuki</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/products']" [queryParams]="{brand: 'kia'}">Kia</a></li>
                   <li><a class="dropdown-item" [routerLink]="['/products']">All Products</a></li>
                 </ul>
               </li>

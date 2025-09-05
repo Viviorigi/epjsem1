@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError, forkJoin } from 'rxjs';
 import { map, catchError, shareReplay } from 'rxjs/operators';
-import { Category, Watch } from './watches.service';
+import { Category, Car, Brand } from './cars.service';
 import { Company, Statistics } from './company.service';
 import { StoreLocation } from './store-locator.service';
 import { FAQ } from './faq.service';
@@ -51,18 +51,18 @@ export class DataService {
   }
 
   getHomePageData(): Observable<{
-    featuredWatches: Watch[],
+    featuredCars: Car[],
     categories: Category[],
     company: Company,
     statistics: Statistics,
     testimonials: Testimonial[]
-  }> {
+  } > {
     return this.getData().pipe(
       map(data => {
-        const featuredWatches = data.products.slice(0, 6);
+        const featuredCars = data.products.slice(0, 6);
         
         return {
-          featuredWatches,
+          featuredCars,
           categories: data.categories,
           company: data.company,
           statistics: data.statistics,
@@ -73,27 +73,29 @@ export class DataService {
   }
   
   getProductListPageData(): Observable<{
-    products: Watch[],
-    categories: Category[]
+    products: Car[],
+    categories: Category[],
+    brands: Brand[]
   }> {
     return this.getData().pipe(
       map(data => {
         return {
           products: data.products,
-          categories: data.categories
+          categories: data.categories,
+          brands: data.brands
         };
       })
     );
   }
   
   getProductDetailPageData(productId: string): Observable<{
-    product: Watch,
-    relatedProducts: Watch[],
+    product: Car,
+    relatedProducts: Car[],
     category: Category
   }> {
     return this.getData().pipe(
       map(data => {
-        const product = data.products.find((p: Watch) => p.id === productId);
+        const product = data.products.find((p: Car) => p.id === productId);
         
         if (!product) {
           throw new Error(`Product with ID ${productId} not found`);
@@ -102,7 +104,7 @@ export class DataService {
         const category = data.categories.find((c: Category) => c.id === product.categoryId);
         
         const relatedProducts = data.products
-          .filter((p: Watch) => p.categoryId === product.categoryId && p.id !== productId)
+          .filter((p: Car) => p.categoryId === product.categoryId && p.id !== productId)
           .slice(0, 4);
           
         return {

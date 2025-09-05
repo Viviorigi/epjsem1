@@ -1,14 +1,14 @@
 
 import { Injectable } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { Watch } from '../services/watches.service';
+import { Car } from './cars.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductModalService {
-  private selectedWatch: Watch | null = null;
+  private selectedCar: Car | null = null;
   
   constructor(private dataService: DataService) { }
   

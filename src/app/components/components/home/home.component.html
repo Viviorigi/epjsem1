@@ -3,7 +3,7 @@
   <div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-  <p>Loading amazing watches...</p>
+  <p>Loading amazing cares...</p>
 </div>
 
 <div class="alert alert-danger" *ngIf="error">
@@ -49,13 +49,13 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="left-image">
-            <img src="assets/images/featured-watch.jpg" alt="Featured Watch">
+            <img src="assets/images/featured-car.jpg" alt="Featured car">
           </div>
         </div>
         <div class="col-lg-5">
           <div class="section-heading">
             <h6>| About Us</h6>
-            <h2>{{ companyInfo?.name || 'Alberto Watch Company' }} - {{ companyInfo?.slogan || 'Excellence in Timekeeping' }}</h2>
+            <h2>{{ companyInfo?.name || 'Alberto car Company' }} - {{ companyInfo?.slogan || 'Excellence in Timekeeping' }}</h2>
           </div>
           <div class="accordion" id="accordionExample">
             <div class="accordion-item">
@@ -66,7 +66,7 @@
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  {{ companyInfo?.description || 'Alberto Watch Company is a full-service watch repair, appraisal, and retail store offering the finest selection of luxury timepieces. Founded with a passion for exceptional craftsmanship, we provide an unparalleled selection with first-class service.' }}
+                  {{ companyInfo?.description || 'Alberto car Company is a full-service car repair, appraisal, and retail store offering the finest selection of luxury timepieces. Founded with a passion for exceptional craftsmanship, we provide an unparalleled selection with first-class service.' }}
                 </div>
               </div>
             </div>
@@ -78,7 +78,7 @@
               </h2>
               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  We offer comprehensive <strong>watch repair services</strong>, professional appraisals, and an extensive collection of premium watches. Our certified watchmakers can restore even the most complex timepieces to their original condition with precision and care.
+                  We offer comprehensive <strong>car repair services</strong>, professional appraisals, and an extensive collection of premium cares. Our certified carmakers can restore even the most complex timepieces to their original condition with precision and care.
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  We carry a wide selection of brand new watches such as <strong>Michael Kors, Rolex, Citizen Eco-Drive, Bulova</strong> and more. Each piece in our collection represents the pinnacle of watchmaking excellence.
+                  We carry a wide selection of brand new cares such as <strong>Michael Kors, Rolex, Citizen Eco-Drive, Bulova</strong> and more. Each piece in our collection represents the pinnacle of carmaking excellence.
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 <div class="icon-container">
                   <i class="fas fa-tools"></i>
                 </div>
-                <h4>Expert Repair<br><span>Master Watchmakers</span></h4>
+                <h4>Expert Repair<br><span>Master carmakers</span></h4>
               </li>
               <li>
                 <div class="icon-container">
@@ -137,7 +137,7 @@
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
             <h6>| Craftsmanship</h6>
-            <h2>The Art of Watchmaking</h2>
+            <h2>The Art of carmaking</h2>
           </div>
         </div>
       </div>
@@ -149,7 +149,7 @@
       <div class="row">
         <div class="col-lg-10 offset-lg-1">
           <div class="video-frame">
-            <img src="assets/images/watchmaking-video.jpg" alt="Watchmaking Process">
+            <img src="assets/images/carmaking-video.jpg" alt="carmaking Process">
             <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
           </div>
         </div>
@@ -175,9 +175,9 @@
               <div class="col-lg-4">
                 <div class="counter">
                   <h2 class="timer count-title count-number" 
-                      [attr.data-to]="statistics?.watchesRepaired || 15000" 
+                      [attr.data-to]="statistics?.caresRepaired || 15000" 
                       data-speed="1000"></h2>
-                  <p class="count-text ">Watches<br>Repaired</p>
+                  <p class="count-text ">cares<br>Repaired</p>
                 </div>
               </div>
               <div class="col-lg-4">
@@ -289,35 +289,35 @@
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
             <h6>| Featured Timepieces</h6>
-            <h2>Discover Our Most Coveted Watches</h2>
+            <h2>Discover Our Most Coveted cares</h2>
           </div>
         </div>
       </div>
       <div class="row">
-        <!-- Featured watch items -->
-        <div class="col-lg-4 col-md-6" *ngFor="let watch of featuredWatches">
+        <!-- Featured car items -->
+        <div class="col-lg-4 col-md-6" *ngFor="let car of featuredCars">
           <div class="item">
-            <a href="javascript:void(0)" (click)="openWatchDetails(watch)">
-              <img [src]="watch.images[0]" [alt]="watch.name">
+            <a href="javascript:void(0)" (click)="opencarDetails(car)">
+              <img [src]="car.images[0]" [alt]="car.name">
             </a>
-            <span class="category">{{ watch.categoryId === 'luxury' ? 'Luxury Collection' : 
-                                      watch.categoryId === 'vintage' ? 'Vintage Collection' : 
+            <span class="category">{{ car.categoryId === 'luxury' ? 'Luxury Collection' : 
+                                      car.categoryId === 'vintage' ? 'Vintage Collection' : 
                                       'Smart Collection' }}</span>
-            <h6>{{ watch.discount ? 
-                ((watch.price * (1 - watch.discount/100)) | currency:'USD':'symbol':'1.0-0') : 
-                (watch.price | currency:'USD':'symbol':'1.0-0') }}</h6>
-            <h4><a href="javascript:void(0)" (click)="openWatchDetails(watch)">{{ watch.name }}</a></h4>
+            <h6>{{ car.discount ? 
+                ((car.price * (1 - car.discount/100)) | currency:'USD':'symbol':'1.0-0') : 
+                (car.price | currency:'USD':'symbol':'1.0-0') }}</h6>
+            <h4><a href="javascript:void(0)" (click)="opencarDetails(car)">{{ car.name }}</a></h4>
             <ul>
-              <li *ngIf="watch.specifications.movement">Movement: <span>{{ watch.specifications.movement }}</span></li>
-              <li *ngIf="watch.specifications.caseSize">Case Size: <span>{{ watch.specifications.caseSize }}</span></li>
-              <li *ngIf="watch.specifications.waterResistance">Water Resistance: <span>{{ watch.specifications.waterResistance }}</span></li>
-              <li *ngIf="watch.specifications.material">Material: <span>{{ watch.specifications.material }}</span></li>
-              <li *ngIf="watch.specifications.features && watch.specifications.features.length > 0">Features: 
-                <span>{{ watch.specifications.features.join(', ') }}</span>
+              <li *ngIf="car.specifications.movement">Movement: <span>{{ car.specifications.movement }}</span></li>
+              <li *ngIf="car.specifications.caseSize">Case Size: <span>{{ car.specifications.caseSize }}</span></li>
+              <li *ngIf="car.specifications.waterResistance">Water Resistance: <span>{{ car.specifications.waterResistance }}</span></li>
+              <li *ngIf="car.specifications.material">Material: <span>{{ car.specifications.material }}</span></li>
+              <li *ngIf="car.specifications.features && car.specifications.features.length > 0">Features: 
+                <span>{{ car.specifications.features.join(', ') }}</span>
               </li>
             </ul>
             <div class="main-button">
-              <a href="javascript:void(0)" (click)="openWatchDetails(watch)">View Details</a>
+              <a href="javascript:void(0)" (click)="openCarDetails(car)">View Details</a>
             </div>
           </div>
         </div>
@@ -408,11 +408,11 @@
   </div>
 </div>
 <app-product-detail-modal
-  [watch]="selectedWatch"
+  [car]="selectedCar"
   [category]="selectedCategory"
-  [relatedWatches]="relatedWatches"
+  [relatedCars]="relatedCars"
   [loading]="modalLoading"
   (closeModal)="onCloseModal()"
-  (viewRelatedWatch)="onViewRelatedWatch($event)">
+  (viewRelatedcar)="onViewRelatedCar($event)">
 </app-product-detail-modal>
 

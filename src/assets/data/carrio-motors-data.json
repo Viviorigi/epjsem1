@@ -124,475 +124,478 @@
     }
   ],
   "categories": [
-  {
-    "id": "premium",
-    "name": "Premium Cars",
-    "kind": "segment",
-    "description": "Luxurious, well-appointed vehicles with strong performance and daily usability.",
-    "image": "assets/images/categories/premium.jpg",
-    "features": [
-      "Luxurious Interiors",
-      "Advanced Driver Assistance",
-      "Adaptive Suspension",
-      "Quiet Cabins",
-      "Long-Distance Comfort"
-    ]
-  },
-  {
-    "id": "sports",
-    "name": "Sports Cars",
-    "kind": "segment",
-    "description": "Agile and engaging performance machines for spirited road driving.",
-    "image": "assets/images/categories/sports.jpg",
-    "features": [
-      "0-100 km/h under 5s",
-      "Sport Chassis",
-      "High-Grip Tires",
-      "Responsive Steering",
-      "Track-Day Ready"
-    ]
-  },
-  {
-    "id": "super",
-    "name": "Supercars",
-    "kind": "segment",
-    "description": "High-performance exotics balancing track capability and road manners.",
-    "image": "assets/images/categories/super.jpg",
-    "features": [
-      "0-100 km/h under 3.5s",
-      "Aero Enhancements",
-      "Carbon-Ceramic Brakes",
-      "Lightweight Materials",
-      "Iconic Design"
-    ]
-  },
-  {
-    "id": "hyper",
-    "name": "Hypercars",
-    "kind": "segment",
-    "description": "Ultimate performance with cutting-edge technology and exclusivity.",
-    "image": "assets/images/categories/hyper.jpg",
-    "features": [
-      "Extreme Power",
-      "Active Aerodynamics",
-      "Carbon Monocoque",
-      "Limited Production",
-      "Record-Breaking Speed"
-    ]
-  },
-  {
-    "id": "bmw",
-    "name": "BMW",
-    "kind": "brand",
-    "description": "M division performance with everyday usability.",
-    "image": "assets/images/brands/bmw.jpg",
-    "features": [
-      "M xDrive",
-      "Twin-Turbo Powertrains",
-      "Adaptive M Suspension",
-      "Driver-Focused Cabins",
-      "Track Packages"
-    ]
-  },
-  {
-    "id": "audi",
-    "name": "Audi",
-    "kind": "brand",
-    "description": "Quattro composure and premium interiors with RS performance.",
-    "image": "assets/images/brands/audi.jpg",
-    "features": [
-      "Quattro AWD",
-      "RS Torque Splitter",
-      "Matrix LED",
-      "Lightweight Construction",
-      "Bespoke Interiors"
-    ]
-  },
-  {
-    "id": "hyundai",
-    "name": "Hyundai",
-    "kind": "brand",
-    "description": "N performance line bringing playful dynamics and value.",
-    "image": "assets/images/brands/hyundai.jpg",
-    "features": [
-      "N Corner Carving",
-      "Rev-Matching",
-      "Performance LSD",
-      "Sport Buckets",
-      "Track Modes"
-    ]
-  },
-  {
-    "id": "suzuki",
-    "name": "Suzuki",
-    "kind": "brand",
-    "description": "Lightweight, engaging compacts with sharp responses.",
-    "image": "assets/images/brands/suzuki.jpg",
-    "features": [
-      "Lightweight Chassis",
-      "Punchy Turbo Engines",
-      "Agile Handling",
-      "Compact Footprint",
-      "Daily Practicality"
-    ]
-  },
-  {
-    "id": "kia",
-    "name": "Kia",
-    "kind": "brand",
-    "description": "GT-line performance and tech-forward interiors.",
-    "image": "assets/images/brands/kia.jpg",
-    "features": [
-      "Sport-Tuned Suspension",
-      "Drive Mode Select",
-      "Advanced Safety Suite",
-      "Premium Audio",
-      "Ample Luggage Space"
-    ]
-  }
-],
+    {
+      "id": "premium",
+      "name": "Premium Cars",
+      "kind": "segment",
+      "description": "Luxurious, well-appointed vehicles with strong performance and daily usability.",
+      "image": "assets/images/categories/premium.jpg",
+      "features": [
+        "Luxurious Interiors",
+        "Advanced Driver Assistance",
+        "Adaptive Suspension",
+        "Quiet Cabins",
+        "Long-Distance Comfort"
+      ]
+    },
+    {
+      "id": "sports",
+      "name": "Sports Cars",
+      "kind": "segment",
+      "description": "Agile and engaging performance machines for spirited road driving.",
+      "image": "assets/images/categories/sports.jpg",
+      "features": [
+        "0-100 km/h under 5s",
+        "Sport Chassis",
+        "High-Grip Tires",
+        "Responsive Steering",
+        "Track-Day Ready"
+      ]
+    },
+    {
+      "id": "super",
+      "name": "Supercars",
+      "kind": "segment",
+      "description": "High-performance exotics balancing track capability and road manners.",
+      "image": "assets/images/categories/super.jpg",
+      "features": [
+        "0-100 km/h under 3.5s",
+        "Aero Enhancements",
+        "Carbon-Ceramic Brakes",
+        "Lightweight Materials",
+        "Iconic Design"
+      ]
+    },
+    {
+      "id": "hyper",
+      "name": "Hypercars",
+      "kind": "segment",
+      "description": "Ultimate performance with cutting-edge technology and exclusivity.",
+      "image": "assets/images/categories/hyper.jpg",
+      "features": [
+        "Extreme Power",
+        "Active Aerodynamics",
+        "Carbon Monocoque",
+        "Limited Production",
+        "Record-Breaking Speed"
+      ]
+    }
+  ],
+  "brands": [
+    {
+      "id": "bmw",
+      "name": "BMW",
+      "kind": "brand",
+      "description": "M division performance with everyday usability.",
+      "image": "assets/images/brands/bmw.jpg",
+      "features": [
+        "M xDrive",
+        "Twin-Turbo Powertrains",
+        "Adaptive M Suspension",
+        "Driver-Focused Cabins",
+        "Track Packages"
+      ]
+    },
+    {
+      "id": "audi",
+      "name": "Audi",
+      "kind": "brand",
+      "description": "Quattro composure and premium interiors with RS performance.",
+      "image": "assets/images/brands/audi.jpg",
+      "features": [
+        "Quattro AWD",
+        "RS Torque Splitter",
+        "Matrix LED",
+        "Lightweight Construction",
+        "Bespoke Interiors"
+      ]
+    },
+    {
+      "id": "hyundai",
+      "name": "Hyundai",
+      "kind": "brand",
+      "description": "N performance line bringing playful dynamics and value.",
+      "image": "assets/images/brands/hyundai.jpg",
+      "features": [
+        "N Corner Carving",
+        "Rev-Matching",
+        "Performance LSD",
+        "Sport Buckets",
+        "Track Modes"
+      ]
+    },
+    {
+      "id": "suzuki",
+      "name": "Suzuki",
+      "kind": "brand",
+      "description": "Lightweight, engaging compacts with sharp responses.",
+      "image": "assets/images/brands/suzuki.jpg",
+      "features": [
+        "Lightweight Chassis",
+        "Punchy Turbo Engines",
+        "Agile Handling",
+        "Compact Footprint",
+        "Daily Practicality"
+      ]
+    },
+    {
+      "id": "kia",
+      "name": "Kia",
+      "kind": "brand",
+      "description": "GT-line performance and tech-forward interiors.",
+      "image": "assets/images/brands/kia.jpg",
+      "features": [
+        "Sport-Tuned Suspension",
+        "Drive Mode Select",
+        "Advanced Safety Suite",
+        "Premium Audio",
+        "Ample Luggage Space"
+      ]
+    }
+  ],
   "products": [
-  {
-    "id": "bmw-m8-competition",
-    "name": "BMW M8 Competition Gran Coupé",
-    "brand": "bmw",
-    "categoryId": "premium",
-    "price": 165000,
-    "discount": 5,
-    "description": "Flagship GT blending luxury comfort with explosive M performance.",
-    "features": [
-      "4.4L V8 twin-turbo",
-      "Adaptive M suspension",
-      "M xDrive AWD",
-      "Merino leather",
-      "Harman Kardon audio"
-    ],
-    "specifications": {
-      "engine": "4.4L V8 Twin-Turbo",
-      "power": "617 hp",
-      "drivetrain": "AWD",
-      "transmission": "8-speed Automatic",
-      "topSpeed": "305 km/h",
-      "zeroToHundred": "3.2 s"
+    {
+      "id": "bmw-m8-competition",
+      "name": "BMW M8 Competition Gran Coupé",
+      "brandId": "bmw",
+      "categoryId": "premium",
+      "price": 165000,
+      "discount": 5,
+      "description": "Flagship GT blending luxury comfort with explosive M performance.",
+      "features": [
+        "4.4L V8 twin-turbo",
+        "Adaptive M suspension",
+        "M xDrive AWD",
+        "Merino leather",
+        "Harman Kardon audio"
+      ],
+      "specifications": {
+        "engine": "4.4L V8 Twin-Turbo",
+        "power": "617 hp",
+        "drivetrain": "AWD",
+        "transmission": "8-speed Automatic",
+        "topSpeed": "305 km/h",
+        "zeroToHundred": "3.2 s"
+      },
+      "images": [
+        "assets/images/products/bmw-m8-1.jpg",
+        "assets/images/products/bmw-m8-2.jpg",
+        "assets/images/products/bmw-m8-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "3 years"
     },
-    "images": [
-      "assets/images/products/bmw-m8-1.jpg",
-      "assets/images/products/bmw-m8-2.jpg",
-      "assets/images/products/bmw-m8-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "3 years"
-  },
-  {
-    "id": "bmw-m4-csl",
-    "name": "BMW M4 CSL",
-    "brand": "bmw",
-    "categoryId": "sports",
-    "price": 145000,
-    "discount": null,
-    "description": "Track-focused coupe with reduced weight and razor-sharp handling.",
-    "features": [
-      "Lightweight bucket seats",
-      "Carbon hood & roof",
-      "M Traction Control",
-      "Track tires",
-      "Sport exhaust"
-    ],
-    "specifications": {
-      "engine": "3.0L I6 Twin-Turbo",
-      "power": "543 hp",
-      "drivetrain": "RWD",
-      "transmission": "8-speed Automatic",
-      "topSpeed": "307 km/h",
-      "zeroToHundred": "3.7 s"
+    {
+      "id": "bmw-m4-csl",
+      "name": "BMW M4 CSL",
+      "brandId": "bmw",
+      "categoryId": "sports",
+      "price": 145000,
+      "discount": null,
+      "description": "Track-focused coupe with reduced weight and razor-sharp handling.",
+      "features": [
+        "Lightweight bucket seats",
+        "Carbon hood & roof",
+        "M Traction Control",
+        "Track tires",
+        "Sport exhaust"
+      ],
+      "specifications": {
+        "engine": "3.0L I6 Twin-Turbo",
+        "power": "543 hp",
+        "drivetrain": "RWD",
+        "transmission": "8-speed Automatic",
+        "topSpeed": "307 km/h",
+        "zeroToHundred": "3.7 s"
+      },
+      "images": [
+        "assets/images/products/bmw-m4csl-1.jpg",
+        "assets/images/products/bmw-m4csl-2.jpg",
+        "assets/images/products/bmw-m4csl-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "3 years"
     },
-    "images": [
-      "assets/images/products/bmw-m4csl-1.jpg",
-      "assets/images/products/bmw-m4csl-2.jpg",
-      "assets/images/products/bmw-m4csl-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "3 years"
-  },
-  {
-    "id": "audi-rs7-performance",
-    "name": "Audi RS 7 Performance",
-    "brand": "audi",
-    "categoryId": "premium",
-    "price": 145500,
-    "discount": 3,
-    "description": "Four-door coupe with brutal V8 thrust and quattro composure.",
-    "features": [
-      "Quattro AWD",
-      "RS torque splitter",
-      "Matrix LED",
-      "Valcona leather",
-      "Bang & Olufsen"
-    ],
-    "specifications": {
-      "engine": "4.0L V8 Twin-Turbo",
-      "power": "621 hp",
-      "drivetrain": "AWD",
-      "transmission": "8-speed Automatic",
-      "topSpeed": "305 km/h",
-      "zeroToHundred": "3.4 s"
+    {
+      "id": "audi-rs7-performance",
+      "name": "Audi RS 7 Performance",
+      "brandId": "audi",
+      "categoryId": "premium",
+      "price": 145500,
+      "discount": 3,
+      "description": "Four-door coupe with brutal V8 thrust and quattro composure.",
+      "features": [
+        "Quattro AWD",
+        "RS torque splitter",
+        "Matrix LED",
+        "Valcona leather",
+        "Bang & Olufsen"
+      ],
+      "specifications": {
+        "engine": "4.0L V8 Twin-Turbo",
+        "power": "621 hp",
+        "drivetrain": "AWD",
+        "transmission": "8-speed Automatic",
+        "topSpeed": "305 km/h",
+        "zeroToHundred": "3.4 s"
+      },
+      "images": [
+        "assets/images/products/audi-rs7-1.jpg",
+        "assets/images/products/audi-rs7-2.jpg",
+        "assets/images/products/audi-rs7-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "3 years"
     },
-    "images": [
-      "assets/images/products/audi-rs7-1.jpg",
-      "assets/images/products/audi-rs7-2.jpg",
-      "assets/images/products/audi-rs7-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "3 years"
-  },
-  {
-    "id": "audi-r8-v10",
-    "name": "Audi R8 V10 RWD",
-    "brand": "audi",
-    "categoryId": "super",
-    "price": 210000,
-    "discount": null,
-    "description": "Naturally aspirated V10 drama with everyday refinement.",
-    "features": [
-      "5.2L NA V10",
-      "Rear-wheel drive",
-      "Dual-clutch gearbox",
-      "Carbon interior pack",
-      "Sport exhaust"
-    ],
-    "specifications": {
-      "engine": "5.2L V10",
-      "power": "562 hp",
-      "drivetrain": "RWD",
-      "transmission": "7-speed DCT",
-      "topSpeed": "324 km/h",
-      "zeroToHundred": "3.7 s"
+    {
+      "id": "audi-r8-v10",
+      "name": "Audi R8 V10 RWD",
+      "brandId": "audi",
+      "categoryId": "super",
+      "price": 210000,
+      "discount": null,
+      "description": "Naturally aspirated V10 drama with everyday refinement.",
+      "features": [
+        "5.2L NA V10",
+        "Rear-wheel drive",
+        "Dual-clutch gearbox",
+        "Carbon interior pack",
+        "Sport exhaust"
+      ],
+      "specifications": {
+        "engine": "5.2L V10",
+        "power": "562 hp",
+        "drivetrain": "RWD",
+        "transmission": "7-speed DCT",
+        "topSpeed": "324 km/h",
+        "zeroToHundred": "3.7 s"
+      },
+      "images": [
+        "assets/images/products/audi-r8-1.jpg",
+        "assets/images/products/audi-r8-2.jpg",
+        "assets/images/products/audi-r8-3.jpg"
+      ],
+      "inStock": false,
+      "warranty": "3 years"
     },
-    "images": [
-      "assets/images/products/audi-r8-1.jpg",
-      "assets/images/products/audi-r8-2.jpg",
-      "assets/images/products/audi-r8-3.jpg"
-    ],
-    "inStock": false,
-    "warranty": "3 years"
-  },
-  {
-    "id": "audi-pb18-etron",
-    "name": "Audi PB18 e-tron (Show Car)",
-    "brand": "audi",
-    "categoryId": "hyper",
-    "price": 0,
-    "discount": null,
-    "description": "Electric hyper concept showcasing instant torque and advanced battery tech.",
-    "features": [
-      "Tri-motor AWD",
-      "Active aero",
-      "Carbon monocoque",
-      "Torque vectoring",
-      "Driver-centric cockpit"
-    ],
-    "specifications": {
-      "engine": "Tri-motor Electric",
-      "power": "≈ 764 hp",
-      "drivetrain": "AWD",
-      "transmission": "Single-speed",
-      "topSpeed": "Limited",
-      "zeroToHundred": "≈ 2.0 s"
+    {
+      "id": "audi-pb18-etron",
+      "name": "Audi PB18 e-tron (Show Car)",
+      "brandId": "audi",
+      "categoryId": "hyper",
+      "price": 0,
+      "discount": null,
+      "description": "Electric hyper concept showcasing instant torque and advanced battery tech.",
+      "features": [
+        "Tri-motor AWD",
+        "Active aero",
+        "Carbon monocoque",
+        "Torque vectoring",
+        "Driver-centric cockpit"
+      ],
+      "specifications": {
+        "engine": "Tri-motor Electric",
+        "power": "≈ 764 hp",
+        "drivetrain": "AWD",
+        "transmission": "Single-speed",
+        "topSpeed": "Limited",
+        "zeroToHundred": "≈ 2.0 s"
+      },
+      "images": [
+        "assets/images/products/audi-pb18-1.jpg",
+        "assets/images/products/audi-pb18-2.jpg",
+        "assets/images/products/audi-pb18-3.jpg"
+      ],
+      "inStock": false,
+      "warranty": "—"
     },
-    "images": [
-      "assets/images/products/audi-pb18-1.jpg",
-      "assets/images/products/audi-pb18-2.jpg",
-      "assets/images/products/audi-pb18-3.jpg"
-    ],
-    "inStock": false,
-    "warranty": "—"
-  },
-  {
-    "id": "hyundai-elantra-n",
-    "name": "Hyundai Elantra N",
-    "brand": "hyundai",
-    "categoryId": "sports",
-    "price": 38000,
-    "discount": 5,
-    "description": "Playful front-drive sports sedan tuned by Hyundai N division.",
-    "features": [
-      "Rev-matching",
-      "N Corner Carving diff",
-      "Launch control",
-      "Sport bucket seats",
-      "Variable exhaust"
-    ],
-    "specifications": {
-      "engine": "2.0L Turbo I4",
-      "power": "276 hp",
-      "drivetrain": "FWD",
-      "transmission": "8-speed DCT",
-      "topSpeed": "250 km/h",
-      "zeroToHundred": "5.3 s"
+    {
+      "id": "hyundai-elantra-n",
+      "name": "Hyundai Elantra N",
+      "brandId": "hyundai",
+      "categoryId": "sports",
+      "price": 38000,
+      "discount": 5,
+      "description": "Playful front-drive sports sedan tuned by Hyundai N division.",
+      "features": [
+        "Rev-matching",
+        "N Corner Carving diff",
+        "Launch control",
+        "Sport bucket seats",
+        "Variable exhaust"
+      ],
+      "specifications": {
+        "engine": "2.0L Turbo I4",
+        "power": "276 hp",
+        "drivetrain": "FWD",
+        "transmission": "8-speed DCT",
+        "topSpeed": "250 km/h",
+        "zeroToHundred": "5.3 s"
+      },
+      "images": [
+        "assets/images/products/elantra-n-1.jpg",
+        "assets/images/products/elantra-n-2.jpg",
+        "assets/images/products/elantra-n-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "5 years"
     },
-    "images": [
-      "assets/images/products/elantra-n-1.jpg",
-      "assets/images/products/elantra-n-2.jpg",
-      "assets/images/products/elantra-n-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "5 years"
-  },
-  {
-    "id": "hyundai-ioniq5-n",
-    "name": "Hyundai IONIQ 5 N",
-    "brand": "hyundai",
-    "categoryId": "sports",
-    "price": 78000,
-    "discount": null,
-    "description": "Electric hot-hatch crossover with instant torque and track-ready cooling.",
-    "features": [
-      "Dual-motor AWD",
-      "N e-shift",
-      "Track thermal management",
-      "E-LSD",
-      "Regenerative braking"
-    ],
-    "specifications": {
-      "engine": "Dual-motor Electric",
-      "power": "641 hp (boost)",
-      "drivetrain": "AWD",
-      "transmission": "Single-speed",
-      "topSpeed": "260 km/h",
-      "zeroToHundred": "3.4 s"
+    {
+      "id": "hyundai-ioniq5-n",
+      "name": "Hyundai IONIQ 5 N",
+      "brandId": "hyundai",
+      "categoryId": "sports",
+      "price": 78000,
+      "discount": null,
+      "description": "Electric hot-hatch crossover with instant torque and track-ready cooling.",
+      "features": [
+        "Dual-motor AWD",
+        "N e-shift",
+        "Track thermal management",
+        "E-LSD",
+        "Regenerative braking"
+      ],
+      "specifications": {
+        "engine": "Dual-motor Electric",
+        "power": "641 hp (boost)",
+        "drivetrain": "AWD",
+        "transmission": "Single-speed",
+        "topSpeed": "260 km/h",
+        "zeroToHundred": "3.4 s"
+      },
+      "images": [
+        "assets/images/products/ioniq5-n-1.jpg",
+        "assets/images/products/ioniq5-n-2.jpg",
+        "assets/images/products/ioniq5-n-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "5 years / battery 8 years"
     },
-    "images": [
-      "assets/images/products/ioniq5-n-1.jpg",
-      "assets/images/products/ioniq5-n-2.jpg",
-      "assets/images/products/ioniq5-n-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "5 years / battery 8 years"
-  },
-  {
-    "id": "suzuki-swift-sport",
-    "name": "Suzuki Swift Sport",
-    "brand": "suzuki",
-    "categoryId": "sports",
-    "price": 26500,
-    "discount": 4,
-    "description": "Featherweight hot hatch delivering pure, analog fun.",
-    "features": [
-      "Lightweight chassis",
-      "Turbo petrol",
-      "Sport suspension",
-      "Recaro-style seats",
-      "Compact footprint"
-    ],
-    "specifications": {
-      "engine": "1.4L Turbo I4",
-      "power": "138 hp",
-      "drivetrain": "FWD",
-      "transmission": "6-speed Manual",
-      "topSpeed": "210 km/h",
-      "zeroToHundred": "8.1 s"
+    {
+      "id": "suzuki-swift-sport",
+      "name": "Suzuki Swift Sport",
+      "brandId": "suzuki",
+      "categoryId": "sports",
+      "price": 26500,
+      "discount": 4,
+      "description": "Featherweight hot hatch delivering pure, analog fun.",
+      "features": [
+        "Lightweight chassis",
+        "Turbo petrol",
+        "Sport suspension",
+        "Recaro-style seats",
+        "Compact footprint"
+      ],
+      "specifications": {
+        "engine": "1.4L Turbo I4",
+        "power": "138 hp",
+        "drivetrain": "FWD",
+        "transmission": "6-speed Manual",
+        "topSpeed": "210 km/h",
+        "zeroToHundred": "8.1 s"
+      },
+      "images": [
+        "assets/images/products/swift-sport-1.jpg",
+        "assets/images/products/swift-sport-2.jpg",
+        "assets/images/products/swift-sport-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "3 years"
     },
-    "images": [
-      "assets/images/products/swift-sport-1.jpg",
-      "assets/images/products/swift-sport-2.jpg",
-      "assets/images/products/swift-sport-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "3 years"
-  },
-  {
-    "id": "suzuki-jimny-xtreme",
-    "name": "Suzuki Jimny Xtreme (Tuned)",
-    "brand": "suzuki",
-    "categoryId": "premium",
-    "price": 34500,
-    "discount": null,
-    "description": "Urban-adventure build with lifted suspension and lifestyle kit.",
-    "features": [
-      "Lift kit",
-      "All-terrain tires",
-      "Roof rack",
-      "LED bar",
-      "Snorkel kit"
-    ],
-    "specifications": {
-      "engine": "1.5L NA I4",
-      "power": "101 hp",
-      "drivetrain": "4x4",
-      "transmission": "5-speed Manual",
-      "topSpeed": "145 km/h",
-      "zeroToHundred": "12.6 s"
+    {
+      "id": "suzuki-jimny-xtreme",
+      "name": "Suzuki Jimny Xtreme (Tuned)",
+      "brandId": "suzuki",
+      "categoryId": "premium",
+      "price": 34500,
+      "discount": null,
+      "description": "Urban-adventure build with lifted suspension and lifestyle kit.",
+      "features": [
+        "Lift kit",
+        "All-terrain tires",
+        "Roof rack",
+        "LED bar",
+        "Snorkel kit"
+      ],
+      "specifications": {
+        "engine": "1.5L NA I4",
+        "power": "101 hp",
+        "drivetrain": "4x4",
+        "transmission": "5-speed Manual",
+        "topSpeed": "145 km/h",
+        "zeroToHundred": "12.6 s"
+      },
+      "images": [
+        "assets/images/products/jimny-xtreme-1.jpg",
+        "assets/images/products/jimny-xtreme-2.jpg",
+        "assets/images/products/jimny-xtreme-3.jpg"
+      ],
+      "inStock": false,
+      "warranty": "3 years"
     },
-    "images": [
-      "assets/images/products/jimny-xtreme-1.jpg",
-      "assets/images/products/jimny-xtreme-2.jpg",
-      "assets/images/products/jimny-xtreme-3.jpg"
-    ],
-    "inStock": false,
-    "warranty": "3 years"
-  },
-  {
-    "id": "kia-ev6-gt",
-    "name": "Kia EV6 GT",
-    "brand": "kia",
-    "categoryId": "sports",
-    "price": 72000,
-    "discount": 6,
-    "description": "Blistering straight-line speed with everyday practicality.",
-    "features": [
-      "Dual-motor AWD",
-      "Drift mode",
-      "Electronic LSD",
-      "High-performance brakes",
-      "ADAS suite"
-    ],
-    "specifications": {
-      "engine": "Dual-motor Electric",
-      "power": "577 hp",
-      "drivetrain": "AWD",
-      "transmission": "Single-speed",
-      "topSpeed": "260 km/h",
-      "zeroToHundred": "3.5 s"
+    {
+      "id": "kia-ev6-gt",
+      "name": "Kia EV6 GT",
+      "brandId": "kia",
+      "categoryId": "sports",
+      "price": 72000,
+      "discount": 6,
+      "description": "Blistering straight-line speed with everyday practicality.",
+      "features": [
+        "Dual-motor AWD",
+        "Drift mode",
+        "Electronic LSD",
+        "High-performance brakes",
+        "ADAS suite"
+      ],
+      "specifications": {
+        "engine": "Dual-motor Electric",
+        "power": "577 hp",
+        "drivetrain": "AWD",
+        "transmission": "Single-speed",
+        "topSpeed": "260 km/h",
+        "zeroToHundred": "3.5 s"
+      },
+      "images": [
+        "assets/images/products/ev6-gt-1.jpg",
+        "assets/images/products/ev6-gt-2.jpg",
+        "assets/images/products/ev6-gt-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "5 years / battery 8 years"
     },
-    "images": [
-      "assets/images/products/ev6-gt-1.jpg",
-      "assets/images/products/ev6-gt-2.jpg",
-      "assets/images/products/ev6-gt-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "5 years / battery 8 years"
-  },
-  {
-    "id": "kia-stinger-gt",
-    "name": "Kia Stinger GT",
-    "brand": "kia",
-    "categoryId": "premium",
-    "price": 56000,
-    "discount": 8,
-    "description": "Grand-touring fastback combining space, style, and twin-turbo punch.",
-    "features": [
-      "Twin-turbo V6",
-      "Brembo brakes",
-      "Launch control",
-      "Leather upholstery",
-      "Harman Kardon audio"
-    ],
-    "specifications": {
-      "engine": "3.3L V6 Twin-Turbo",
-      "power": "365 hp",
-      "drivetrain": "RWD",
-      "transmission": "8-speed Automatic",
-      "topSpeed": "270 km/h",
-      "zeroToHundred": "4.9 s"
-    },
-    "images": [
-      "assets/images/products/stinger-gt-1.jpg",
-      "assets/images/products/stinger-gt-2.jpg",
-      "assets/images/products/stinger-gt-3.jpg"
-    ],
-    "inStock": true,
-    "warranty": "5 years"
-  }
-]
+    {
+      "id": "kia-stinger-gt",
+      "name": "Kia Stinger GT",
+      "brandId": "kia",
+      "categoryId": "premium",
+      "price": 56000,
+      "discount": 8,
+      "description": "Grand-touring fastback combining space, style, and twin-turbo punch.",
+      "features": [
+        "Twin-turbo V6",
+        "Brembo brakes",
+        "Launch control",
+        "Leather upholstery",
+        "Harman Kardon audio"
+      ],
+      "specifications": {
+        "engine": "3.3L V6 Twin-Turbo",
+        "power": "365 hp",
+        "drivetrain": "RWD",
+        "transmission": "8-speed Automatic",
+        "topSpeed": "270 km/h",
+        "zeroToHundred": "4.9 s"
+      },
+      "images": [
+        "assets/images/products/stinger-gt-1.jpg",
+        "assets/images/products/stinger-gt-2.jpg",
+        "assets/images/products/stinger-gt-3.jpg"
+      ],
+      "inStock": true,
+      "warranty": "5 years"
+    }
+  ]
 
-  }
+
+}

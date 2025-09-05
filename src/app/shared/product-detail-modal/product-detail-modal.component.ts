@@ -1,7 +1,7 @@
 // product-detail-modal.component.ts
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { Watch } from 'src/app/components/services/watches.service';
+import { Car } from 'src/app/components/services/cars.service';
 
 declare var $: any;
 
@@ -11,13 +11,13 @@ declare var $: any;
   styleUrls: ['./product-detail-modal.component.scss']
 })
 export class ProductDetailModalComponent implements OnInit {
-  @Input() watch: Watch | null = null;
+  @Input() car: Car | null = null;
   @Input() category: any = null;
-  @Input() relatedWatches: Watch[] = [];
+  @Input() relatedCars: Car[] = [];
   @Input() loading: boolean = false;
   
   @Output() closeModal = new EventEmitter<void>();
-  @Output() viewRelatedWatch = new EventEmitter<Watch>();
+  @Output() viewRelatedCar = new EventEmitter<Car>();
   
   activeImageIndex: number = 0;
 
@@ -42,8 +42,8 @@ export class ProductDetailModalComponent implements OnInit {
     this.activeImageIndex = index;
   }
   
-  viewRelated(watch: Watch): void {
-    this.viewRelatedWatch.emit(watch);
+  viewRelated(Car: Car): void {
+    this.viewRelatedCar.emit(Car);
   }
   
   private initializeModalComponents(): void {
@@ -61,8 +61,8 @@ export class ProductDetailModalComponent implements OnInit {
   }
   
   getSanitizedDescription() {
-    if (this.watch && this.watch.description) {
-      return this.sanitizer.bypassSecurityTrustHtml(this.watch.description);
+    if (this.car && this.car.description) {
+      return this.sanitizer.bypassSecurityTrustHtml(this.car.description);
     }
     return '';
   }

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-12">
         <span class="breadcrumb"><a [routerLink]="['/']">Home</a> / Products</span>
-        <h3>Our Timepiece Collections</h3>
+        <h3>Our Carrio Car Collections</h3>
       </div>
     </div>
   </div>
@@ -13,7 +13,7 @@
   <div class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-  <p>Loading amazing watches...</p>
+  <p>Loading amazing Carrio...</p>
 </div>
 
 <div class="alert alert-danger" *ngIf="error">
@@ -22,70 +22,117 @@
 
 <div *ngIf="!loading && !error" class="section properties">
   <div class="container">
-    <ul class="properties-filter">
-      <li>
-        <a class="is_active" href="#!" data-filter="*" (click)="filterByCategory('')">All Collections</a>
-      </li>
-      <li *ngFor="let category of categories">
-        <a href="#!" (click)="filterByCategory(category.id)" [attr.data-filter]="'.' + category.id">{{ category.name }}</a>
-      </li>
-    </ul>
+    <!-- Category filter -->
+<ul class="properties-filter categories" *ngIf="activeFilter === 'category'">
+  <li>
+    <a href="#"
+       (click)="onCategoryClick($event, '')"
+       [class.is_active]="!selectedCategory"
+       data-filter="*">
+      All Collections
+    </a>
+  </li>
+  <li *ngFor="let category of categories">
+    <a href="#"
+       (click)="onCategoryClick($event, category.id)"
+       [class.is_active]="selectedCategory === category.id"
+       [attr.data-filter]="'.' + category.id">
+      {{ category.name }}
+    </a>
+  </li>
+</ul>
+
+<!-- Brand filter: chỉ hiện khi activeFilter === 'brand' -->
+<ul class="properties-filter brands mt-2" *ngIf="activeFilter === 'brand'">
+  <li>
+    <a href="#"
+       (click)="onBrandClick($event, '')"
+       [class.is_active]="!selectedBrand">
+      All Brands
+    </a>
+  </li>
+  <li *ngFor="let b of brands">
+    <a href="#"
+       (click)="onBrandClick($event, b.id)"
+       [class.is_active]="selectedBrand === b.id">
+      {{ b.name }}
+    </a>
+  </li>
+</ul>
+   
+
     <div class="row properties-box">
-      <div *ngFor="let watch of filteredWatches" 
-        class="col-lg-4 col-md-6 align-self-center mb-30 properties-items {{ watch.categoryId }}">
-          <div class="item">
-            <a href="javascript:void(0)" (click)="openWatchDetails(watch)">
-              <img style="width: 295px; height: 295px; object-fit: contain;" 
-                    [src]="watch.images && watch.images.length > 0 ? watch.images[0] : 'assets/images/default-watch.jpg'" 
-                    [alt]="watch.name">
-            </a>
-            <span class="category">{{ watch.brand }}</span>
-            <h6>
-              <span *ngIf="watch.discount" class="discount">{{ watch.price | currency:'USD':'symbol':'1.0-0' }}</span>
-              {{ watch.discount ?
-                  ((watch.price * (1 - watch.discount/100)) | currency:'USD':'symbol':'1.0-0') :
-                  (watch.price | currency:'USD':'symbol':'1.0-0') }}
-            </h6>
-            <h4><a href="javascript:void(0)" (click)="openWatchDetails(watch)">{{ watch.name }}</a></h4>
-            <ul>
-              <li *ngIf="watch.specifications.movement">Movement: <span>{{ watch.specifications.movement }}</span></li>
-              <li *ngIf="watch.specifications.caseSize">Case Size: <span>{{ watch.specifications.caseSize }}</span></li>
-              <li *ngIf="watch.specifications.waterResistance">Water Resistance: <span>{{ watch.specifications.waterResistance }}</span></li>
-              <li *ngIf="watch.specifications.material">Material: <span>{{ watch.specifications.material }}</span></li>
-              <li>Warranty: <span>{{ watch.warranty }}</span></li>
-              <li>Availability: <span [class.text-success]="watch.inStock" [class.text-danger]="!watch.inStock">
-                {{ watch.inStock ? 'In Stock' : 'Out of Stock' }}
-              </span></li>
-            </ul>
-            <div class="main-button">
-              <a href="javascript:void(0)" (click)="openWatchDetails(watch)">View Details</a>
-            </div>
+      <div *ngFor="let car of filteredcars"
+           class="col-lg-4 col-md-6 align-self-center mb-30 properties-items {{ car.categoryId }}">
+        <div class="item">
+          <a href="javascript:void(0)" (click)="openCarDetails(car)">
+            <img style="width: 295px; height: 295px; object-fit: contain;"
+                 [src]="car.images && car.images.length > 0 ? car.images[0] : 'assets/images/default-car.jpg'"
+                 [alt]="car.name">
+          </a>
+
+          <!-- <span class="category">{{ getBrandName((car as any).brandId) }}</span> -->
+
+          <h6>
+            <span *ngIf="car.discount" class="discount">
+              {{ car.price | currency:'USD':'symbol':'1.0-0' }}
+            </span>
+            {{
+              car.discount
+                ? (car.price * (1 - car.discount/100) | currency:'USD':'symbol':'1.0-0')
+                : (car.price | currency:'USD':'symbol':'1.0-0')
+            }}
+          </h6>
+
+          <h4>
+            <a href="javascript:void(0)" (click)="openCarDetails(car)">{{ car.name }}</a>
+          </h4>
+
+          <ul>
+            <li *ngIf="car.specifications?.engine">Engine: <span>{{ car.specifications.engine }}</span></li>
+            <li *ngIf="car.specifications?.power">Power: <span>{{ car.specifications.power }}</span></li>
+            <li *ngIf="car.specifications?.drivetrain">Drivetrain: <span>{{ car.specifications.drivetrain }}</span></li>
+            <li *ngIf="car.specifications?.transmission">Transmission: <span>{{ car.specifications.transmission }}</span></li>
+            <li *ngIf="car.specifications?.topSpeed">Top Speed: <span>{{ car.specifications.topSpeed }}</span></li>
+            <li *ngIf="car.specifications?.zeroToHundred">0–100: <span>{{ car.specifications.zeroToHundred }}</span></li>
+            <li>Warranty: <span>{{ car.warranty }}</span></li>
+            <li>Availability:
+              <span [class.text-success]="car.inStock" [class.text-danger]="!car.inStock">
+                {{ car.inStock ? 'In Stock' : 'Out of Stock' }}
+              </span>
+            </li>
+          </ul>
+
+          <div class="main-button">
+            <a href="javascript:void(0)" (click)="openCarDetails(car)">View Details</a>
           </div>
+        </div>
       </div>
     </div>
-    
+
     <!-- Pagination -->
-    <div class="row" *ngIf="watches.length > itemsPerPage">
+    <div class="row" *ngIf="(cars?.length || 0) > itemsPerPage">
       <div class="col-lg-12">
         <ul class="pagination">
           <li *ngFor="let page of getPageNumbers()">
-            <a [class.is_active]="currentPage === page" 
-               href="javascript:void(0)" 
+            <a [class.is_active]="currentPage === page"
+               href="javascript:void(0)"
                (click)="changePage(page)">{{ page }}</a>
           </li>
           <li *ngIf="currentPage < totalPages">
-            <a href="javascript:void(0)" (click)="changePage(currentPage+1)">>></a>
+            <a href="javascript:void(0)" (click)="changePage(currentPage + 1)">&gt;&gt;</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+
 <app-product-detail-modal
-  [watch]="selectedWatch"
-  [category]="selectedWatchCategory"
-  [relatedWatches]="relatedWatches"
+  [car]="selectedCar"
+  [category]="selectedCarCategory"
+  [relatedCars]="relatedCars"
   [loading]="modalLoading"
-  (closeModal)="onCloseModal()"
-  (viewRelatedWatch)="onViewRelatedWatch($event)">
+  (closeModal)="onCloseModal()"D
+  (viewRelatedCar)="onViewRelatedCar($event)">
 </app-product-detail-modal>

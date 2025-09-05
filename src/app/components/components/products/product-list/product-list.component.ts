@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
-import { Watch } from '../../../services/watches.service';
+import { Car } from '../../../services/cars.service';
 import { ProductDetailModalComponent } from 'src/app/shared/product-detail-modal/product-detail-modal.component';
 import { ProductModalService } from 'src/app/components/services/product-modal.service';
 
@@ -14,49 +14,68 @@ declare var $: any;
 })
 export class ProductListComponent implements OnInit, AfterViewInit {
   @ViewChild(ProductDetailModalComponent) productModal!: ProductDetailModalComponent;
-  watches: Watch[] = [];
-  filteredWatches: Watch[] = [];
+
+  cars: Car[] = [];
+  filteredcars: Car[] = [];
   categories: any[] = [];
-  selectedCategory: string = '';
-  currentPage: number = 1;
-  itemsPerPage: number = 9;
-  loading: boolean = true;
-  error: string = '';
+  brands: any[] = [];
+
+  selectedCategory = '';
+  selectedBrand = '';
+
+  currentPage = 1;
+  itemsPerPage = 9;
+
+  loading = true;
+  error = '';
+
   Math = Math;
-  selectedWatch: Watch | null = null;
-  selectedWatchCategory: any = null;
-  relatedWatches: Watch[] = [];
-  modalLoading: boolean = false;
+
+  selectedCar: Car | null = null;
+  selectedCarCategory: any = null;
+  relatedCars: Car[] = [];
+  modalLoading = false;
+  activeFilter: 'category' | 'brand' = 'category';  // <--- NEW
+
   constructor(
     private dataService: DataService,
     private route: ActivatedRoute,
     private router: Router,
     private productModalService: ProductModalService
-  ) { }
+  ) {}
+
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
+      const hasBrand = !!params['brand'];
+      const hasCategory = !!params['category'];
+
       this.selectedCategory = params['category'] || '';
+      this.selectedBrand = params['brand'] || '';
+
+      if (hasBrand) {
+        this.activeFilter = 'brand';
+      } else if (hasCategory) {
+        this.activeFilter = 'category';
+      } 
+      
       this.loadProducts();
     });
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.initializeIsotope();
-    }, 100);
+    setTimeout(() => this.initializeIsotope(), 100);
   }
 
   loadProducts(): void {
     this.loading = true;
     this.dataService.getProductListPageData().subscribe({
       next: (data) => {
-        this.watches = data.products;
-        this.categories = data.categories;
+        this.cars = data.products ?? [];
+        this.categories = data.categories ?? [];
+        this.brands = data.brands ?? [];
         this.filterProducts();
         this.loading = false;
-        setTimeout(() => {
-          this.initializeIsotope();
-        }, 100);
+        setTimeout(() => this.initializeIsotope(), 100);
       },
       error: (err) => {
         this.error = 'Failed to load products. Please try again later.';
@@ -66,111 +85,134 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     });
   }
 
-  filterByCategory(categoryId: string) {
-    this.selectedCategory = categoryId;
-    this.currentPage = 1; 
-    this.filterProducts();
-    
-    this.router.navigate([], {
-      relativeTo: this.route,
-      queryParams: { category: categoryId || null },
-      queryParamsHandling: 'merge'
-    });
-  }
-  
+filterByCategory(categoryId: string) {
+  this.selectedCategory = categoryId;
+  this.currentPage = 1;
+  this.filterProducts();
+  this.router.navigate([], {
+    relativeTo: this.route,
+    queryParams: { category: categoryId || null },
+    queryParamsHandling: 'merge'
+  });
+}
+
+filterByBrand(brandId: string) {
+  this.selectedBrand = brandId;
+  this.currentPage = 1;
+  this.filterProducts();
+  this.router.navigate([], {
+    relativeTo: this.route,
+    queryParams: { brand: brandId || null }, // null => remove param
+    queryParamsHandling: 'merge'
+  });
+}
+
   filterProducts(): void {
-    let filteredList = this.watches;
-    
+    let filteredList = this.cars;
+
     if (this.selectedCategory) {
-      filteredList = this.watches.filter(watch => 
-        watch.categoryId === this.selectedCategory
-      );
+      filteredList = filteredList.filter(car => car.categoryId === this.selectedCategory);
     }
-    
+
+    if (this.selectedBrand) {
+      filteredList = filteredList.filter(car => (car as any).brandId === this.selectedBrand);
+    }
+
     const totalItems = filteredList.length;
     const totalPages = Math.ceil(totalItems / this.itemsPerPage);
-    
+
     if (this.currentPage > totalPages && totalPages > 0) {
       this.currentPage = 1;
     }
-    
+
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = Math.min(startIndex + this.itemsPerPage, totalItems);
-    this.filteredWatches = filteredList.slice(startIndex, endIndex);
+    this.filteredcars = filteredList.slice(startIndex, endIndex);
 
-    setTimeout(() => {
-      this.initializeIsotope();
-    }, 100);
+    setTimeout(() => this.initializeIsotope(), 100);
+  }
+  
+ onCategoryClick(e: Event, categoryId: string) {
+    e.preventDefault();
+    this.activeFilter = 'category';      
+    this.filterByCategory(categoryId);
+  }
+
+  onBrandClick(e: Event, brandId: string) {
+    e.preventDefault();
+    this.activeFilter = 'brand';         
+    this.filterByBrand(brandId);
   }
 
   initializeIsotope(): void {
     if ($ && $.fn.isotope) {
       const productsGrid = $('.properties-box');
-      if (productsGrid.length) {
-        if (productsGrid.data('isotope')) {
-          productsGrid.isotope('destroy');
-        }
-        
-        productsGrid.isotope({
-          itemSelector: '.properties-items',
-          layoutMode: 'fitRows'
-        });
-        
-        $('.properties-filter li a').removeClass('is_active');
-        
-        if (this.selectedCategory) {
-          $(`.properties-filter li a[data-filter=".${this.selectedCategory}"]`).addClass('is_active');
-          productsGrid.isotope({ filter: `.${this.selectedCategory}` });
-        } else {
-          $('.properties-filter li a[data-filter="*"]').addClass('is_active');
-          productsGrid.isotope({ filter: '*' });
-        }
-        
-        $('.properties-filter li a').off('click').on('click', function() {
-          const filterValue = $(this).attr('data-filter');
-          productsGrid.isotope({ filter: filterValue });
-          
-          $('.properties-filter li a').removeClass('is_active');
-          $(this).addClass('is_active');
-          return false;
-        });
+      if (!productsGrid.length) return;
+
+      if (productsGrid.data('isotope')) productsGrid.isotope('destroy');
+
+      productsGrid.isotope({ itemSelector: '.properties-items', layoutMode: 'fitRows' });
+
+      // Nếu đang ở brand mode -> Isotope không filter theo category
+      if (this.activeFilter === 'brand') {
+        $('.properties-filter.categories li a').removeClass('is_active');
+        productsGrid.isotope({ filter: '*' });
+        return;
       }
-    } else {
-      console.warn('Isotope not available. Make sure to include the library.');
+
+      // Category mode: highlight & filter theo category
+      const $catLinks = $('.properties-filter.categories li a');
+      $catLinks.removeClass('is_active');
+
+      if (this.selectedCategory) {
+        $catLinks.filter(`[data-filter=".${this.selectedCategory}"]`).addClass('is_active');
+        productsGrid.isotope({ filter: `.${this.selectedCategory}` });
+      } else {
+        $catLinks.filter('[data-filter="*"]').addClass('is_active');
+        productsGrid.isotope({ filter: '*' });
+      }
     }
   }
+
   changePage(page: number): void {
     this.currentPage = page;
-    this.filterProducts(); 
+    this.filterProducts();
     window.scrollTo(0, 0);
   }
 
+  // ✅ Pagination should reflect filtered list, not all cars
   get totalPages(): number {
-    return Math.ceil(this.watches.length / this.itemsPerPage);
+    return Math.ceil((this.cars
+      .filter(c => !this.selectedCategory || c.categoryId === this.selectedCategory)
+      .filter(c => !this.selectedBrand || (c as any).brandId === this.selectedBrand)
+    ).length / this.itemsPerPage) || 1;
   }
 
   getPageNumbers(): number[] {
-    return Array.from({length: this.totalPages}, (_, i) => i + 1);
+    const pages = this.totalPages;
+    return Array.from({ length: pages }, (_, i) => i + 1);
   }
 
   navigateToProductDetail(productId: string): void {
     this.router.navigate(['/products', productId]);
   }
+
   ngOnDestroy(): void {
     const productsGrid = $('.properties-box');
     if (productsGrid.length && productsGrid.data('isotope')) {
       productsGrid.isotope('destroy');
     }
   }
-  openWatchDetails(watch: Watch): void {
+
+  openCarDetails(car: Car): void {
     this.modalLoading = true;
-    this.selectedWatch = watch;
-    
-    this.productModalService.getProductDetail(watch.id).subscribe({
+    this.selectedCar = car;
+
+    this.productModalService.getProductDetail(car.id).subscribe({
       next: (data) => {
-        this.selectedWatch = data.product;
-        this.selectedWatchCategory = data.category;
-        this.relatedWatches = data.relatedProducts;
+        this.selectedCar = data.product;
+        this.selectedCarCategory = data.category;
+        this.relatedCars = data.relatedProducts ?? [];
         this.modalLoading = false;
 
         this.productModal.show();
@@ -182,12 +224,18 @@ export class ProductListComponent implements OnInit, AfterViewInit {
       }
     });
   }
-  
+
   onCloseModal(): void {
-    this.selectedWatch = null;
+    this.selectedCar = null;
   }
-  
-  onViewRelatedWatch(watch: Watch): void {
-    this.openWatchDetails(watch);
+
+  onViewRelatedCar(car: Car): void {
+    this.openCarDetails(car);
+  }
+
+  // Helper to display brand name
+  getBrandName(brandId: string): string {
+    const b = this.brands?.find(x => x.id === brandId);
+    return b?.name ?? brandId;
   }
 }

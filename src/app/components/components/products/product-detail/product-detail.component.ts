@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
-import { Watch } from '../../../services/watches.service';
+import { Car } from '../../../services/cars.service';
 import { Location } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -11,8 +11,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  watch: Watch | null = null;
-  relatedWatches: Watch[] = [];
+  car: Car | null = null;
+  relatedCars: Car[] = [];
   category: any;
   loading: boolean = true;
   error: string = '';
@@ -40,9 +40,9 @@ export class ProductDetailComponent implements OnInit {
 
     this.dataService.getProductDetailPageData(id).subscribe({
       next: (data) => {
-        this.watch = data.product;
+        this.car = data.product;
         this.category = data.category;
-        this.relatedWatches = data.relatedProducts;
+        this.relatedCars = data.relatedProducts;
         this.loading = false;
         setTimeout(() => {
           this.initializeTabs();
@@ -75,8 +75,8 @@ export class ProductDetailComponent implements OnInit {
   }
 
   getSanitizedDescription() {
-    if (this.watch && this.watch.description) {
-      return this.sanitizer.bypassSecurityTrustHtml(this.watch.description);
+    if (this.car && this.car.description) {
+      return this.sanitizer.bypassSecurityTrustHtml(this.car.description);
     }
     return '';
   }
