@@ -1,6 +1,7 @@
 // product-detail-modal.component.ts
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { Car } from 'src/app/components/services/cars.service';
 
 declare var $: any;
@@ -21,7 +22,7 @@ export class ProductDetailModalComponent implements OnInit {
   
   activeImageIndex: number = 0;
 
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer,private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +37,11 @@ export class ProductDetailModalComponent implements OnInit {
   hide(): void {
     $('#productDetailModal').modal('hide');
     this.closeModal.emit();
+  }
+
+  goToContact(): void {
+  this.hide(); // đóng modal
+  this.router.navigate(['/contact']); // điều hướng sang Contact
   }
   
   changeImage(index: number): void {

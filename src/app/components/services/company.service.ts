@@ -28,7 +28,7 @@ export interface Company {
 
 export interface Statistics {
   yearsInBusiness: number;
-  watchesRepaired: number;
+  vehiclesServiced: number;
   brandsAvailable: number;
   satisfiedCustomers: number;
   visitorsCount: number;

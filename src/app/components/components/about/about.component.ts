@@ -23,9 +23,10 @@ export class AboutComponent implements OnInit {
     this.dataService.getAllData().subscribe({
       next: (data) => {
         this.companyInfo = data.company;
-        this.teamMembers = data.testimonials || [];
         this.statistics = data.statistics;
         this.loading = false;
+        console.log(data);
+        
       },
       error: (err) => {
         this.error = 'Không thể tải thông tin. Vui lòng thử lại sau.';

@@ -5,7 +5,6 @@ import { DataService } from '../../services/data.service';
 import { CarsService, Car, Category } from '../../services/cars.service';
 import { CompanyService, Statistics } from '../../services/company.service';
 import { Router } from '@angular/router';
-import { Testimonial, TestimonialsService } from '../../services/testimonial.service';
 import { ProductModalService } from '../../services/product-modal.service';
 import Swal from 'sweetalert2';
 import { ProductDetailModalComponent } from 'src/app/shared/product-detail-modal/product-detail-modal.component';
@@ -23,7 +22,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   featuredCars: Car[] = [];
   categories: Category[] = [];
   statistics: Statistics | null = null;
-  testimonials: Testimonial[] = [];
   companyInfo: any = null;
   loading = true;
   error = '';
@@ -38,7 +36,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     private dataService: DataService,
     private carService: CarsService,
     private companyService: CompanyService,
-    private testimonialsService: TestimonialsService,
     private productModalService: ProductModalService,
     private router: Router,
     private fb: FormBuilder
@@ -84,7 +81,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.categories = data.categories;
         this.statistics = data.statistics;
         this.companyInfo = data.company;
-        this.testimonials = data.testimonials;
         this.loading = false;
         setTimeout(() => {
           this.initializeOwlCarousel();

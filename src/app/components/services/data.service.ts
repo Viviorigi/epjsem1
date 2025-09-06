@@ -6,8 +6,7 @@ import { Category, Car, Brand } from './cars.service';
 import { Company, Statistics } from './company.service';
 import { StoreLocation } from './store-locator.service';
 import { FAQ } from './faq.service';
-import { Testimonial } from './testimonial.service';
-import { WatchService } from './service.service';
+import { CarService } from './service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -55,7 +54,6 @@ export class DataService {
     categories: Category[],
     company: Company,
     statistics: Statistics,
-    testimonials: Testimonial[]
   } > {
     return this.getData().pipe(
       map(data => {
@@ -122,7 +120,7 @@ export class DataService {
   
   getSupportPageData(): Observable<{
     faqs: FAQ[],
-    services: WatchService[]
+    services: CarService[]
   }> {
     return this.getData().pipe(
       map(data => {

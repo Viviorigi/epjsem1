@@ -7,7 +7,7 @@
     "contact": {
       "email": "info@carriomotors.com",
       "phone": "+84 123 456 7890",
-      "address": "123 Supercar Avenue, Luxury District, Hanoi, Vietnam"
+      "address": "Carrio Motors - Hanoi ShowRoom - Hoan Kiem Lake, Ha Noi, Vietnam"
     },
     "socialMedia": {
       "facebook": "facebook.com/carriomotors",
@@ -24,7 +24,7 @@
   "statistics": {
     "yearsInBusiness": 25,
     "vehiclesServiced": 4200,
-    "brandsAvailable": 35,
+    "brandsAvailable": 25,
     "satisfiedCustomers": 3100,
     "visitorsCount": 1256
   },
@@ -594,6 +594,147 @@
       ],
       "inStock": true,
       "warranty": "5 years"
+    }
+  ],
+  "storeLocations": [
+    {
+      "id": "hcm-flagship",
+      "name": "Carrio Motors – Flagship Ho Chi Minh City",
+      "address": "12 Nguyen Hue, District 1, Ho Chi Minh City, Vietnam",
+      "phone": "+84 28 1234 5678",
+      "email": "hcm@carriomotors.com",
+      "coordinates": {
+        "latitude": 10.779783,
+        "longitude": 106.699653
+      },
+      "openingHours": {
+        "monday": "09:00 - 19:00",
+        "tuesday": "09:00 - 19:00",
+        "wednesday": "09:00 - 19:00",
+        "thursday": "09:00 - 19:00",
+        "friday": "09:00 - 19:00",
+        "saturday": "09:00 - 18:00",
+        "sunday": "10:00 - 17:00"
+      },
+      "services": [
+        "Sales",
+        "Test Drive Center",
+        "Service & Maintenance",
+        "Warranty Center",
+        "Financing & Leasing",
+        "Parts & Accessories"
+      ],
+      "image": "assets/images/stores/hcm-flagship.jpg"
+    },
+    {
+      "id": "hn-showroom",
+      "name": "Carrio Motors – Hanoi Showroom",
+      "address": "88 Ly Thuong Kiet, Hoan Kiem, Ha Noi, Vietnam",
+      "phone": "+84 24 1234 5678",
+      "email": "hanoi@carriomotors.com",
+      "coordinates": {
+        "latitude": 21.027763,
+        "longitude": 105.83416
+      },
+      "openingHours": {
+        "monday": "09:00 - 19:00",
+        "tuesday": "09:00 - 19:00",
+        "wednesday": "09:00 - 19:00",
+        "thursday": "09:00 - 19:00",
+        "friday": "09:00 - 19:00",
+        "saturday": "09:00 - 18:00",
+        "sunday": "10:00 - 17:00"
+      },
+      "services": [
+        "Sales",
+        "Test Drive Center",
+        "Service & Maintenance",
+        "Financing & Leasing"
+      ],
+      "image": "assets/images/stores/hn-showroom.jpg"
+    },
+    {
+      "id": "dn-service",
+      "name": "Carrio Motors – Da Nang Service Center",
+      "address": "25 Vo Nguyen Giap, Son Tra, Da Nang, Vietnam",
+      "phone": "+84 236 123 4567",
+      "email": "danang@carriomotors.com",
+      "coordinates": {
+        "latitude": 16.054407,
+        "longitude": 108.202167
+      },
+      "openingHours": {
+        "monday": "08:30 - 18:00",
+        "tuesday": "08:30 - 18:00",
+        "wednesday": "08:30 - 18:00",
+        "thursday": "08:30 - 18:00",
+        "friday": "08:30 - 18:00",
+        "saturday": "08:30 - 17:00",
+        "sunday": "Closed"
+      },
+      "services": [
+        "Service & Maintenance",
+        "Warranty Center",
+        "Body Shop",
+        "Parts & Accessories"
+      ],
+      "image": "assets/images/stores/dn-service.jpg"
+    },
+    {
+      "id": "ct-branch",
+      "name": "Carrio Motors – Can Tho Branch",
+      "address": "5 Hoa Binh Ave, Ninh Kieu, Can Tho, Vietnam",
+      "phone": "+84 292 123 4567",
+      "email": "cantho@carriomotors.com",
+      "coordinates": {
+        "latitude": 10.045162,
+        "longitude": 105.746857
+      },
+      "openingHours": {
+        "monday": "09:00 - 18:30",
+        "tuesday": "09:00 - 18:30",
+        "wednesday": "09:00 - 18:30",
+        "thursday": "09:00 - 18:30",
+        "friday": "09:00 - 18:30",
+        "saturday": "09:00 - 17:30",
+        "sunday": "10:00 - 16:00"
+      },
+      "services": [
+        "Sales",
+        "Service & Maintenance",
+        "Financing & Leasing"
+      ],
+      "image": "assets/images/stores/ct-branch.jpg"
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": "ceo-01",
+      "name": "John Carter",
+      "title": "Chief Executive Officer",
+      "image": "assets/images/team/john-carter.jpg",
+      "quote": "Driving Carrio Motors forward with innovation, passion, and trust."
+    },
+    {
+      "id": "sales-01",
+      "name": "Emily Nguyen",
+      "title": "Sales Manager",
+      "image": "assets/images/team/emily-nguyen.jpg",
+      "quote": "Helping every customer find their dream performance car."
+    },
+    {
+      "id": "service-01",
+      "name": "David Tran",
+      "title": "Head of Service & Maintenance",
+      "image": "assets/images/team/david-tran.jpg",
+      "quote": "Precision and care ensure every vehicle runs at its best."
+    },
+    {
+      "id": "finance-01",
+      "name": "Sophia Le",
+      "title": "Finance & Leasing Specialist",
+      "image": "assets/images/team/sophia-le.jpg",
+      "quote": "Making performance cars accessible through tailored financial solutions."
     }
   ]
 

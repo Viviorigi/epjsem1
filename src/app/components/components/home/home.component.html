@@ -49,7 +49,7 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="left-image">
-            <img src="assets/images/featured-car.jpg" alt="Featured car">
+            <img src="assets/images/featured-car.jpg" alt="Featured car" height="300px">
           </div>
         </div>
         <div class="col-lg-5">
@@ -90,7 +90,7 @@
               </h2>
               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  We carry a wide selection of brand new cares such as <strong>Michael Kors, Rolex, Citizen Eco-Drive, Bulova</strong> and more. Each piece in our collection represents the pinnacle of carmaking excellence.
+                  We carry a wide selection of brand new cares such as <strong>BMW, Audi, Huyndai, Kia, Suzuki</strong> and more. Each piece in our collection represents the pinnacle of carmaking excellence.
                 </div>
               </div>
             </div>
@@ -98,33 +98,34 @@
         </div>
         <div class="col-lg-3">
           <div class="info-table">
-            <ul>
-              <li>
-                <div class="icon-container">
-                  <i class="fas fa-tools"></i>
-                </div>
-                <h4>Expert Repair<br><span>Master carmakers</span></h4>
-              </li>
-              <li>
-                <div class="icon-container">
-                  <i class="fas fa-certificate"></i>
-                </div>
-                <h4>Appraisal<br><span>Certified Professionals</span></h4>
-              </li>
-              <li>
-                <div class="icon-container">
-                  <i class="fas fa-clock"></i>
-                </div>
-                <h4>Selection<br><span>Premium Timepieces</span></h4>
-              </li>
-              <li>
-                <div class="icon-container">
-                  <i class="fas fa-shield-alt"></i>
-                </div>
-                <h4>Warranty<br><span>Guaranteed Quality</span></h4>
-              </li>
-            </ul>
-          </div>
+  <ul>
+    <li>
+      <div class="icon-container">
+        <i class="fas fa-tools"></i>
+      </div>
+      <h4>Expert Service<br><span>Certified Technicians</span></h4>
+    </li>
+    <li>
+      <div class="icon-container">
+        <i class="fas fa-car"></i>
+      </div>
+      <h4>Vehicle Appraisal<br><span>Trusted Valuation</span></h4>
+    </li>
+    <li>
+      <div class="icon-container">
+        <i class="fas fa-car-side"></i>
+      </div>
+      <h4>Wide Selection<br><span>Premium & Performance Cars</span></h4>
+    </li>
+    <li>
+      <div class="icon-container">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h4>Warranty<br><span>Guaranteed Quality & Support</span></h4>
+    </li>
+  </ul>
+</div>
+
         </div>
       </div>
     </div>
@@ -136,8 +137,8 @@
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
-            <h6>| Craftsmanship</h6>
-            <h2>The Art of carmaking</h2>
+          <h6>| Innovation & Excellence</h6>
+          <h2>The Art of Performance Cars</h2>
           </div>
         </div>
       </div>
@@ -149,7 +150,7 @@
       <div class="row">
         <div class="col-lg-10 offset-lg-1">
           <div class="video-frame">
-            <img src="assets/images/carmaking-video.jpg" alt="carmaking Process">
+            <img src="assets/images/carrioshowroom.jpg" alt="carmaking Process">
             <a href="https://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
           </div>
         </div>
@@ -235,29 +236,43 @@
                     <div class="col-lg-3">
                       <div class="info-table">
                         <ul>
-                          <!-- Dynamic specifications based on category -->
-                          <ng-container *ngIf="category.id === 'vintage'">
-                            <li>Movement <span>Mechanical</span></li>
-                            <li>Case Material <span>Stainless Steel</span></li>
-                            <li>Band Material <span>Leather</span></li>
-                            <li>Water Resistance <span>30m</span></li>
-                            <li>Warranty <span>2 Years</span></li>
+                          <!-- Premium Cars -->
+                          <ng-container *ngIf="category.id === 'premium'">
+                            <li>Engine <span>V6 / V8 Turbo</span></li>
+                            <li>Transmission <span>8-speed Automatic</span></li>
+                            <li>Drivetrain <span>AWD / RWD</span></li>
+                            <li>Top Speed <span>250–300 km/h</span></li>
+                            <li>Warranty <span>3–5 Years</span></li>
                           </ng-container>
-                          <ng-container *ngIf="category.id === 'luxury'">
-                            <li>Movement <span>Swiss Automatic</span></li>
-                            <li>Case Material <span>18K Gold</span></li>
-                            <li>Band Material <span>Alligator Leather</span></li>
-                            <li>Water Resistance <span>100m</span></li>
-                            <li>Warranty <span>5 Years</span></li>
+
+                          <!-- Sports Cars -->
+                          <ng-container *ngIf="category.id === 'sports'">
+                            <li>Engine <span>I4 / V6 Turbo</span></li>
+                            <li>0–100 km/h <span>Under 5s</span></li>
+                            <li>Chassis <span>Sport-Tuned</span></li>
+                            <li>Drivetrain <span>RWD / AWD</span></li>
+                            <li>Warranty <span>3 Years</span></li>
                           </ng-container>
-                          <ng-container *ngIf="category.id === 'smart'">
-                            <li>Display <span>AMOLED Touchscreen</span></li>
-                            <li>Case Material <span>Titanium</span></li>
-                            <li>Band Material <span>Silicone/Metal</span></li>
-                            <li>Battery Life <span>Up to 7 days</span></li>
-                            <li>Warranty <span>1 Year</span></li>
+
+                          <!-- Supercars -->
+                          <ng-container *ngIf="category.id === 'super'">
+                            <li>Engine <span>V8 / V10</span></li>
+                            <li>Power <span>600–700+ hp</span></li>
+                            <li>0–100 km/h <span>~3s</span></li>
+                            <li>Brakes <span>Carbon-Ceramic</span></li>
+                            <li>Warranty <span>3 Years</span></li>
+                          </ng-container>
+
+                          <!-- Hypercars -->
+                          <ng-container *ngIf="category.id === 'hyper'">
+                            <li>Engine <span>Hybrid / Electric / V12</span></li>
+                            <li>Power <span>1000+ hp</span></li>
+                            <li>0–100 km/h <span>Under 2.5s</span></li>
+                            <li>Body <span>Carbon Monocoque</span></li>
+                            <li>Warranty <span>Limited Production </span></li>
                           </ng-container>
                         </ul>
+
                       </div>
                     </div>
                     <div class="col-lg-6">
@@ -288,8 +303,8 @@
       <div class="row">
         <div class="col-lg-4 offset-lg-4">
           <div class="section-heading text-center">
-            <h6>| Featured Timepieces</h6>
-            <h2>Discover Our Most Coveted cares</h2>
+           <h6>| Featured Collections</h6>
+          <h2>Discover Our Most Coveted Vehicles</h2>
           </div>
         </div>
       </div>

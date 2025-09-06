@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, shareReplay } from 'rxjs/operators';
 
-export interface WatchService {
+export interface CarService {
   id: string;
   name: string;
   description: string;
@@ -50,18 +50,18 @@ export class ServicesService {
     return this.servicesData;
   }
 
-  // Get all watch services
-  getAllServices(): Observable<WatchService[]> {
+  // Get all Car services
+  getAllServices(): Observable<CarService[]> {
     return this.getData().pipe(
       map(data => data.services)
     );
   }
 
   // Get service by ID
-  getServiceById(serviceId: string): Observable<WatchService> {
+  getServiceById(serviceId: string): Observable<CarService> {
     return this.getData().pipe(
       map(data => {
-        const service = data.services.find((s: WatchService) => s.id === serviceId);
+        const service = data.services.find((s: CarService) => s.id === serviceId);
         if (!service) {
           throw new Error(`Service with ID ${serviceId} not found`);
         }
@@ -89,28 +89,28 @@ export class ServicesService {
   }
 
   // Get repair services
-  getRepairServices(): Observable<WatchService | null> {
+  getRepairServices(): Observable<CarService | null> {
     return this.getData().pipe(
       map(data => {
-        return data.services.find((s: WatchService) => s.id === 'repair') || null;
+        return data.services.find((s: CarService) => s.id === 'repair') || null;
       })
     );
   }
 
   // Get appraisal services
-  getAppraisalServices(): Observable<WatchService | null> {
+  getAppraisalServices(): Observable<CarService | null> {
     return this.getData().pipe(
       map(data => {
-        return data.services.find((s: WatchService) => s.id === 'appraisal') || null;
+        return data.services.find((s: CarService) => s.id === 'appraisal') || null;
       })
     );
   }
 
   // Get maintenance services
-  getMaintenanceServices(): Observable<WatchService | null> {
+  getMaintenanceServices(): Observable<CarService | null> {
     return this.getData().pipe(
       map(data => {
-        return data.services.find((s: WatchService) => s.id === 'maintenance') || null;
+        return data.services.find((s: CarService) => s.id === 'maintenance') || null;
       })
     );
   }

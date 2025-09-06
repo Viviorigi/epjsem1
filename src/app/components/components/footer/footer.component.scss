@@ -15,12 +15,14 @@
     overflow: hidden;
   }
   
-  .ticker-content {
-    white-space: nowrap;
-    animation: ticker 20s linear infinite;
-    color: #f02c00;
-    font-weight: 500;
-  }
+ .ticker-content {
+  white-space: nowrap;
+  animation: ticker 40s linear infinite; 
+  font-weight: 600;
+  font-size: 18px; 
+  letter-spacing: 0.5px;
+}
+
   
   @keyframes ticker {
     0% { transform: translateX(100%); }

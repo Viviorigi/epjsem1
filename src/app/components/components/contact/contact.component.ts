@@ -29,15 +29,17 @@ export class ContactComponent implements OnInit {
   companyInfo: any = {};
   
   inquirySubjects = [
-    'Product Inquiry',
-    'Service Appointment',
-    'Price Quote',
-    'Repair Status',
-    'Watch Appraisal',
-    'Store Information',
-    'Warranty Claims',
-    'Other'
-  ];
+  'Vehicle Inquiry',
+  'Test Drive Appointment',
+  'Price Quote',
+  'Service & Maintenance',
+  'Repair Status',
+  'Financing & Leasing Options',
+  'Warranty Claims',
+  'Dealership Information',
+  'Other'
+];
+
 
   constructor(
     private fb: FormBuilder,
