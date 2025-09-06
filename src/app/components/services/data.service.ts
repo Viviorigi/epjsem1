@@ -5,7 +5,6 @@ import { map, catchError, shareReplay } from 'rxjs/operators';
 import { Category, Car, Brand } from './cars.service';
 import { Company, Statistics } from './company.service';
 import { StoreLocation } from './store-locator.service';
-import { FAQ } from './faq.service';
 import { CarService } from './service.service';
 
 @Injectable({
@@ -119,7 +118,6 @@ export class DataService {
   }
   
   getSupportPageData(): Observable<{
-    faqs: FAQ[],
     services: CarService[]
   }> {
     return this.getData().pipe(

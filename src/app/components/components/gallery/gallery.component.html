@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h2>Watch Gallery</h2>
+          <h2>Car Gallery</h2>
           <ul class="breadcrumb">
             <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
             <li class="breadcrumb-item active">Gallery</li>
@@ -37,7 +37,7 @@
                 class="btn filter-btn" 
                 [class.active]="selectedCategory === 'all'"
                 (click)="filterByCategory('all')">
-                All Watches
+                All cares
               </button>
               <ng-container *ngFor="let category of categories">
                 <button 
@@ -68,7 +68,7 @@
         <div class="row gallery-grid">
           <ng-container *ngIf="paginatedProducts.length === 0">
             <div class="col-12 text-center no-results">
-              <p>No watches found. Please try a different search or filter.</p>
+              <p>No cares found. Please try a different search or filter.</p>
             </div>
           </ng-container>
           
