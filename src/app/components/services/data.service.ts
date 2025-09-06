@@ -5,7 +5,7 @@ import { map, catchError, shareReplay } from 'rxjs/operators';
 import { Category, Car, Brand } from './cars.service';
 import { Company, Statistics } from './company.service';
 import { CarService } from './service.service';
-import { TeamMember } from './testimonial.service';
+import { TeamMember } from './teammember.service';
 
 @Injectable({
   providedIn: 'root'
