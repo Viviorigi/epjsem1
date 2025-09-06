@@ -4,8 +4,8 @@ import { Observable, throwError, forkJoin } from 'rxjs';
 import { map, catchError, shareReplay } from 'rxjs/operators';
 import { Category, Car, Brand } from './cars.service';
 import { Company, Statistics } from './company.service';
-import { StoreLocation } from './store-locator.service';
 import { CarService } from './service.service';
+import { TeamMember } from './testimonial.service';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +53,7 @@ export class DataService {
     categories: Category[],
     company: Company,
     statistics: Statistics,
+    teamMembers: TeamMember[]
   } > {
     return this.getData().pipe(
       map(data => {
@@ -63,7 +64,7 @@ export class DataService {
           categories: data.categories,
           company: data.company,
           statistics: data.statistics,
-          testimonials: data.testimonials
+          teamMembers: data.teamMembers
         };
       })
     );

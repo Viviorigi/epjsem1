@@ -99,17 +99,12 @@
             <div class="col-sm-6 col-lg-3" *ngFor="let member of teamMembers">
                 <div class="hover-team">
                     <div class="our-team">
-                        <img [src]="member.image || 'assets/images/default-avatar.jpg'" [alt]="member.name">
+                        <img [src]="member.image || '/assets/images/default-avatar.jpg'" [alt]="member.name" style="max-height: 300px;" >
                         <div class="team-content">
-                            <h3 class="title">{{ member.name }}</h3>
+                            <h3 class="title" style="color: red;">{{ member.name }}</h3>
                             <span class="post">{{ member.title }}</span>
                         </div>
-                        <ul class="social">
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        </ul>
+                        
                     </div>
                     <div class="team-description">
                         <p>{{ member.quote }}</p>

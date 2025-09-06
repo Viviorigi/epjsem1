@@ -712,28 +712,28 @@
       "id": "ceo-01",
       "name": "John Carter",
       "title": "Chief Executive Officer",
-      "image": "assets/images/team/john-carter.jpg",
+      "image": "/assets/images/team/john-carter.png",
       "quote": "Driving Carrio Motors forward with innovation, passion, and trust."
     },
     {
       "id": "sales-01",
       "name": "Emily Nguyen",
       "title": "Sales Manager",
-      "image": "assets/images/team/emily-nguyen.jpg",
+      "image": "/assets/images/team/emily-nguyen.png",
       "quote": "Helping every customer find their dream performance car."
     },
     {
       "id": "service-01",
       "name": "David Tran",
       "title": "Head of Service & Maintenance",
-      "image": "assets/images/team/david-tran.jpg",
+      "image": "/assets/images/team/david-tran.png",
       "quote": "Precision and care ensure every vehicle runs at its best."
     },
     {
       "id": "finance-01",
       "name": "Sophia Le",
       "title": "Finance & Leasing Specialist",
-      "image": "assets/images/team/sophia-le.jpg",
+      "image": "/assets/images/team/sophia-le.png",
       "quote": "Making performance cars accessible through tailored financial solutions."
     }
   ]

@@ -24,6 +24,7 @@ export class AboutComponent implements OnInit {
       next: (data) => {
         this.companyInfo = data.company;
         this.statistics = data.statistics;
+        this.teamMembers = data.teamMembers;
         this.loading = false;
         console.log(data);
         
